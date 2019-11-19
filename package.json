@@ -1,0 +1,32 @@
+{
+  "name": "vue-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "components/index.js",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitea.icts.kuleuven.be:u0130662/vue-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-knobs": "^5.2.6",
+    "@storybook/addon-viewport": "^5.2.6",
+    "@storybook/vue": "^5.2.6",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
