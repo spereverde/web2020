@@ -1,3 +1,5 @@
-import { configure } from '@storybook/vue';
+import { configure, addDecorator, addParameters } from '@storybook/html';
 
-configure(require.context('../components', true, /\.stories\.js$/), module);
+// the line below is required due to a bug in storybook-readme
+addParameters({ options: {} });
+configure(require.context('../src/components', true, /\.stories\.js$/), module);

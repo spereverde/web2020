@@ -1,31 +1,49 @@
 {
-  "name": "vue-components",
-  "version": "1.0.0",
-  "description": "",
-  "main": "components/index.js",
+  "name": "web2020",
+  "version": "0.0.1",
+  "description": "A documented collection of styles and components for use by KUL ICTS",
+  "main": "src/components/index.js",
   "scripts": {
-    "storybook": "start-storybook"
+    "start-storybook": "start-storybook -p 3333",
+    "build-storybook:build": "build-storybook -o dist/storybook",
+    "start-storybook:vue": "start-storybook -c .storybook-vue -p 3333",
+    "build-storybook:vue": "start-storybook -c .storybook-vue -o dist/storybook-vue",
+    "build:css": "cross-env BUILD=css node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:includes": "cross-env BUILD=includes node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git@gitea.icts.kuleuven.be:u0130662/vue-components.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kim Paulissen & Kevin Van Lierde",
+  "license": "UNLICENSE",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "highlight.js": "^9.18.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
+    "@pickra/copy-code-block": "^1.2.0",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-knobs": "^5.2.6",
     "@storybook/addon-viewport": "^5.2.6",
+    "@storybook/html": "^5.3.13",
     "@storybook/vue": "^5.2.6",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
+    "cross-env": "^7.0.0",
+    "handlebars": "^4.7.3",
+    "laravel-mix": "^5.0.1",
+    "laravel-mix-alias": "^1.0.2",
+    "laravel-mix-polyfill": "^2.0.0",
+    "pug": "^2.0.4",
+    "resolve-url-loader": "^2.3.2",
+    "sass": "^1.22.9",
+    "sass-loader": "^7.1.0",
+    "storybook-readme": "^5.0.8",
     "vue-loader": "^15.7.2",
     "vue-template-compiler": "^2.6.10"
   }
