@@ -1,0 +1,70 @@
+/* all colors with explicit hex codes are KUL-defined */
+$colors: (
+  'blue': #08a7eb,
+  'indigo': #004070,
+  'red': #e03f47,
+  'orange': #dc9a04,
+  'yellow': #ffc857,
+  'green': #3ebd92,
+  'teal': #66b4cc,
+  'gray-dark': #333333
+);
+
+$theme-colors: (
+  'primary': map-get($colors, 'blue'),
+  'secondary': #056188,
+  'tertiary': map-get($colors, 'indigo'),
+  'success': map-get($colors, 'green'),
+  'info': map-get($colors, 'teal'),
+  'warning': map-get($colors, 'orange'),
+  'danger': map-get($colors, 'red'),
+  'contact': map-get($colors, 'yellow'),
+  'brand': #1d8db0,
+  'gray': map-get($colors, 'gray-dark')
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 800px,
+  lg: 980px,
+  xl: 1200px
+);
+
+$grid-gutter-width: 20px !default;
+$body-bg: white;
+$body-color: map-get($colors, 'gray-dark');
+$font-size-base: 1rem;
+
+$font-family-sans-serif: 'Open Sans', sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default; // KUL>BS
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default; // KUL>BS
+$font-family-base: $font-family-sans-serif !default; // KUL>BS
+
+$input-btn-padding-y: 0.625rem !default;
+$input-btn-padding-x: 1rem !default;
+$input-btn-border-width: 2px;
+$input-btn-focus-width: 0.1rem;
+$input-btn-focus-color: rgba(143, 142, 142, 0.25);
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(143, 142, 142, 0.25);
+
+// Cards
+
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-border-color: transparent;
+
+// List group
+$list-group-border-color: null;
+$list-group-item-padding-x: 1rem;
+
+$list-group-action-color: null;
+$list-group-action-hover-color: null;
+$list-group-action-active-color: null;
+$list-group-action-active-bg: null;
+
+//modal
+
+$modal-sm: 400px !important;
+
+@import 'bootstrap/scss/bootstrap';

@@ -5,9 +5,10 @@
   "main": "src/components/index.js",
   "scripts": {
     "start-storybook": "start-storybook -p 3333",
-    "build-storybook:build": "build-storybook -o dist/storybook",
+    "build-storybook": "build-storybook -o dist/storybook",
     "start-storybook:vue": "start-storybook -c .storybook-vue -p 3333",
-    "build-storybook:vue": "start-storybook -c .storybook-vue -o dist/storybook-vue",
+    "build-storybook:vue": "build-storybook -c .storybook-vue -o dist/storybook-vue",
+    "watch:css": "cross-env BUILD=css node_modules/.bin/webpack --progress --watch --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build:css": "cross-env BUILD=css node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build:includes": "cross-env BUILD=includes node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
@@ -16,7 +17,7 @@
     "url": "git@gitea.icts.kuleuven.be:u0130662/vue-components.git"
   },
   "author": "Kim Paulissen & Kevin Van Lierde",
-  "license": "UNLICENSE",
+  "license": "UNLICENSED",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "highlight.js": "^9.18.1",

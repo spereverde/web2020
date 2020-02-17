@@ -1,5 +1,5 @@
 import bootstrap from 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import '!style-loader!css-loader!sass-loader!../bootstrap/main.scss';
 
 import ModalStories from './Modal/modal.stories';
 import AlertStories from './Alert/alert.stories';

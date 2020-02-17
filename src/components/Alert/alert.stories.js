@@ -11,7 +11,18 @@ stories.addParameters({ readme: { sidebar: readme } });
 stories.addDecorator(addReadme);
 stories.addDecorator(withKnobs);
 
-const variants = ['primary', 'secondary', 'tertiary'];
+const variants = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'contact',
+  'brand',
+  'gray'
+];
 
 stories.add('Alert', pms => {
   const container = document.createElement('div');
