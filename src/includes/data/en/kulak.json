@@ -1,0 +1,206 @@
+{
+  "org": "KULeuvenKulak",
+  "home_url": "https://www.kuleuven.be/english",
+  "org_url": "https://www.kuleuven-kulak.be/en",
+  "org_logo": "https://stijl.kuleuven.be/2016/img/svg/logo_kulak.svg",
+  "copyright_year": "2016",
+  "footer_columns": [
+    {
+      "title": "Information for",
+      "links": [
+        {
+          "title": "Student",
+          "url": "https://www.kuleuven-kulak.be/en/education/studying-at-kulak/studying-at-kulak/"
+        },
+        {
+          "title": "Researchers",
+          "url": "https://www.kuleuven-kulak.be/en/research/"
+        },
+        {
+          "title": "Staff",
+          "url": "https://www.kuleuven-kulak.be/en/staff/"
+        },
+        {
+          "title": "Job Applicants",
+          "url": "https://www.kuleuven.be/personeel/jobsite/en/"
+        },
+        {
+          "title": "Industry and society",
+          "url": "https://www.kuleuven-kulak.be/en/companies/"
+        }
+      ]
+    },
+    {
+      "title": "Quicklinks",
+      "links": [
+        {
+          "title": "KU Leuven",
+          "url": "https://www.kuleuven.be/english"
+        },
+        {
+          "title": "!!!MISSING Opleidingen",
+          "url": "https://www.kuleuven-kulak.be/nl/onderwijs/onderwijsaanbod"
+        },
+        {
+          "title": "Bibliotheek",
+          "url": "https://www.kuleuven-kulak.be/en/library/"
+        },
+        {
+          "title": "Permanente vorming",
+          "url": "https://www.kuleuven-kulak.be/nl/permanente-vorming/"
+        },
+        {
+          "title": "Jobs",
+          "url": "https://www.kuleuven-kulak.be/nl/personeel/vacatures"
+        },
+        {
+          "title": "@MISMATCH_POSITION News",
+          "url": "https://www.kuleuven-kulak.be/en/news/"
+        },
+        {
+          "title": "Agenda",
+          "url": "https://www.kuleuven-kulak.be/nl/agenda/"
+        },
+        {
+          "title": "Academische kalender",
+          "url": "https://www.kuleuven-kulak.be/nl/over-kulak/kalender-en-sluitingsdagen"
+        },
+        {
+          "title": "Menu studentenrestaurant",
+          "url": "https://www.kuleuven-kulak.be/nl/studenten/studentenrestaurant"
+        },
+        {
+          "title": "Contact",
+          "url": "https://www.kuleuven-kulak.be/en/about-kulak/contact"
+        }
+      ]
+    },
+    [
+      {
+        "title": "Faculties",
+        "links": [
+          {
+            "title": "Faculty of Business and Economics",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-business-and-economics"
+          },
+          {
+            "title": "Faculty of Medicine",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-medicine"
+          },
+          {
+            "title": "Faculty of Arts",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-arts"
+          },
+          {
+            "title": "Faculty of Psychology and Educational Sciences",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-psychology-and-educational-sciences"
+          },
+          {
+            "title": "Faculty of Lave",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-law"
+          },
+          {
+            "title": "Science, Engineering and Technology Group",
+            "url": "https://www.kuleuven-kulak.be/en/about-kulak/faculteiten/faculty-of-science-and-technology"
+          }
+        ]
+      },
+      {
+        "title": "Other language",
+        "links": [
+          {
+            "title": "English",
+            "url": "https://www.kuleuven-kulak.be/en/"
+          }
+        ]
+      }
+    ],
+    {
+      "title": "Internal tools",
+      "links": [
+        {
+          "title": "Toledo",
+          "url": "https://toledo.kuleuven.be/english/"
+        },
+        {
+          "title": "KU Loket",
+          "url": "https://www.kuleuven.be/sapredir/kuloket/"
+        },
+        {
+          "title": "Webmail",
+          "url": "https://webmail.kuleuven.be/"
+        },
+        {
+          "title": "Intranet",
+          "url": "https://admin.kuleuven.be/intranet/english"
+        },
+        {
+          "title": "Who's who",
+          "url": "https://www.kuleuven.be/wieiswie/en/person"
+        },
+        {
+          "title": "Organisational chart",
+          "url": "https://www.kuleuven.be/wieiswie/nl/unit/50000050"
+        },
+        {
+          "title": "@MISSING Lokalenreservaties",
+          "url": "https://www.kuleuven-kulak.be/nl/Bestuur/algemeen-beheer/diensten/logistieke-dienst/intranet"
+        }
+      ]
+    },
+    {
+      "title": "Diensten",
+      "links": [
+        {
+          "title": "Communicatie",
+          "url": "https://www.kuleuven-kulak.be/nl/pers/communicatie/"
+        },
+        {
+          "title": "Studentenvoorzieningen",
+          "url": "https://www.kuleuven-kulak.be/nl/toekomstige-studenten/studentenvoorzieningen/"
+        },
+        {
+          "title": "Studieadvies",
+          "url": "https://www.kuleuven-kulak.be/nl/diensten-en-raden/studieadvies/"
+        },
+        {
+          "title": "Studentenparochie",
+          "url": "https://www.kuleuven-kulak.be/nl/studenten/parochie/"
+        },
+        {
+          "title": "Financiën en HR",
+          "url": "https://www.kuleuven-kulak.be/nl/diensten-en-raden/algemeen-beheer/diensten/findienst/"
+        },
+        {
+          "title": "Infrastructuur en facilitaire diensten",
+          "url": "https://www.kuleuven-kulak.be/nl/diensten-en-raden/algemeen-beheer/diensten/logistieke-dienst/facilitair/"
+        },
+        {
+          "title": "Onthaal",
+          "url": "https://www.kuleuven-kulak.be/nl/diensten-en-raden/algemeen-beheer/diensten/onthaal/"
+        },
+        {
+          "title": "Dienst informatica",
+          "url": "https://www.kuleuven-kulak.be/nl/diensten-en-raden/algemeen-beheer/diensten/informaticabeleid/"
+        },
+        {
+          "title": "Dienst postacademische vorming",
+          "url": "https://pav.kuleuven-kulak.be/"
+        }
+      ]
+    }
+  ],
+  "social": {
+    "title": "Follow Campus Kulak Kortrijk on",
+    "facebook": "KULeuvenKulak",
+    "twitter": "KULeuvenKulak",
+    "instagram": "kuleuvenkulak",
+    "linkedin": "ku-leuven-campus-kulak-kortrijk",
+    "youtube": "KuleuvenKulak"
+  },
+  "legal": {
+    "name": "KU Leuven Campus Kulak Kortrijk",
+    "disclaimer_url": "https://www.kuleuven.be/kuleuven/disclaimer.html",
+    "cookiepolicy_url": "https://admin.kuleuven.be/icts/english/cookiepolicy/"
+  }
+}

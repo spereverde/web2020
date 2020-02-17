@@ -4,8 +4,8 @@ import { addReadme } from 'storybook-readme/html';
 import { action } from '@storybook/addon-actions';
 import $ from 'jquery';
 
-import readme from './readme.md';
 import template from './modal.html';
+import readme from './readme.md';
 import render from '../../../.storybook/renderer';
 
 const stories = storiesOf('Modal', module);
