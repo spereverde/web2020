@@ -1,9 +1,28 @@
 {
+  "abbrev": "kulak",
+  "lang": "nl",
   "org": "KULeuvenKulak",
   "home_url": "https://www.kuleuven.be/kuleuven",
   "org_url": "https://www.kuleuven-kulak.be",
   "org_logo": "https://stijl.kuleuven.be/2016/img/svg/logo_kulak.svg",
   "copyright_year": "2016",
+  "header": {
+    "nav_main": [
+      {
+        "title": "Onderzoek",
+        "url": "https://www.kuleuven-kulak.be/nl/onderzoek/"
+      },
+      {
+        "title": "Studeren",
+        "url": "https://www.kuleuven-kulak.be/nl/studeren/"
+      },
+      {
+        "title": "Over KULAK",
+        "url": "https://www.kuleuven-kulak.be/nl/over-kulak/"
+      }
+    ],
+    "nav_services": []
+  },
   "footer_columns": [
     {
       "title": "Informatie voor",

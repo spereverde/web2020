@@ -10,7 +10,7 @@
     "build-storybook:vue": "build-storybook -c .storybook-vue -o dist/storybook-vue",
     "watch:css": "cross-env BUILD=css node_modules/.bin/webpack --progress --watch --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build:css": "cross-env BUILD=css node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build:includes": "cross-env BUILD=includes node_modules/.bin/webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "build:includes": "cross-env BUILD=includes node webpack.mix.js"
   },
   "repository": {
     "type": "git",

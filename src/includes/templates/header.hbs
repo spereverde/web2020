@@ -1,0 +1,64 @@
+<nav class="global-header noindex hidden-print">
+  <div class="container">
+    <a class="navbar-brand" href="{{ org_url }}">
+    <img class="logo" alt="logo" src="https://stijl.kuleuven.be/2016/img/svg/logo.svg" width="157" height="56"/></a>
+    <div class="controls">
+      <form class="form-search hidden-md-down" role="search" action="{{ header.search_form.url }}" method="get" name="searchform">
+        <input class="form-control" type="text" placeholder="{{ header.search_form.placeholder }}" name="k" id="words">
+        <button class="btn btn-primary" type="submit">
+          <i class="material-icons">search</i>
+        </button>
+      </form>
+
+      <a href="#" class="btn-toggle hidden-md-down" role="button"
+         aria-expanded="false"
+         aria-controls="kuleuven-menu"
+         data-toggle="collapse" data-target="#kuleuven-menu">Info
+         <span class="lines"></span>
+      </a>
+         
+      <a href="#"
+         class="btn-toggle hidden-lg-up js-flyout-toggle flyout-toggle collapsed"
+         role="button" aria-expanded="false"
+         aria-controls="flyout-menu"
+         data-toggle="collapse" data-target="#flyout-menu">Info
+         <span class="arrow"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container hidden-md-down">
+    <div class="nav navbar-nav navbar-collapse collapse" id="kuleuven-menu" role="navigation" aria-expanded="false">
+      <nav class="nav-main pull-lg-left">
+        <ul>
+          {{#each header.nav_main }}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+          {{/each}}
+        </ul>
+      </nav>
+      {{#if header.nav_services }}
+      <nav class="nav-service pull-lg-right">
+        <ul>
+        {{#each header.nav_services }}
+          {{# if links }}
+            <li class="dropdown">
+              <a href="{{ url }}" id="{{ slugify title }}-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ title }}
+                <i class="material-icons">keyboard_arrow_down</i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="{{ slugify title }}-menu">
+                {{#each links }}
+                <li><a href="{{ url }}">{{ title }}</a></li>
+                {{/each}}
+              </ul>
+            </li>
+          {{else}}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+          {{/if}}
+        {{/each}}
+        </ul>
+      </nav>
+      {{/if}}
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,84 @@
+<footer class="global-footer noindex {{ abbrev }} hidden-print">
+
+  {{#if footer_columns }}
+  <div class="footer-navbar">
+    <div class="container">
+      <div class="row">
+        {{#each footer_columns }}
+        <nav>
+          {{#if length}}
+          {{#each .}}
+          <h4>{{ title }}</h4>
+          <ul>
+            {{#each links }}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+            {{/each}}
+          </ul>
+          {{/each}}
+          {{else}}
+          <h4>{{ title }}</h4>
+          <ul>
+            {{#each links}}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </nav>
+        {{/each}}
+      </div>
+      
+      {{#if super_footer_columns }}
+      <div class="row spacer">
+        <div class="super-footer collapse" aria-expanded="false" role="navigation">
+          {{#each super_footer_columns }}
+          <nav>
+            {{#if length}}
+            {{#each .}}
+            <h4>{{ title }}</h4>
+            <ul>
+              {{#each links }}
+              <li><a href="{{ url }}">{{ title }}</a></li>
+              {{/each}}
+            </ul>
+            {{/each}}
+            {{else}}
+            <h4>{{ title }}</h4>
+            <ul>
+              {{#each links}}
+              <li><a href="{{ url }}">{{ title }}</a></li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </nav>
+          {{/each}}
+        </div>
+        <div class="super-footer-controls text-xs-center spacer--sml">
+          <a class="btn btn-ghost toggle-more" href="#" data-toggle="collapse" data-target=".super-footer" aria-expanded="false">
+            {{ label.show_more }} <i class="material-icons">keyboard_arrow_down</i>
+          </a>
+          <a class="btn btn-ghost toggle-less" href="#" data-toggle="collapse" data-target=".super-footer" aria-expanded="false" style="height: 41px;">
+            {{ labels.show_less }} <i class="material-icons">keyboard_arrow_up</i>
+          </a>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/if}}
+  
+  <div class="bottom-footer">
+    <div class="container">
+      <div class="legal">
+        <a href="{{ home_url }}" class="logo" title="KU Leuven">
+           <img class="logo-img" alt="logo" src="{{ org_logo }}" width="157" height="88">
+        </a>
+        <ul>
+          <li>{{ copyright_year }} &copy; {{ legal.name }}</li>
+          <li><a href="{{ legal.disclaimer_url }}">{{ labels.disclaimer }}</a></li>
+          <li><a href="{{ legal.cookiepolicy_url }}">{{ labels.cookie_policy }}</a></li>
+        </ul>
+      </div>
+      {{> share social }}
+    </div>
+  </div>
+</footer>

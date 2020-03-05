@@ -1,0 +1,418 @@
+{
+  "abbrev": "generic",
+  "lang": "en",
+  "org": "KULeuven",
+  "home_url": "https://www.kuleuven.be/english",
+  "org_url": "https://www.kuleuven.be",
+  "org_logo": "https://stijl.kuleuven.be/2016/img/svg/logo.svg",
+  "copyright_year": "2019",
+  "header": {
+    "nav_main": [
+      {
+        "title": "Research",
+        "url": "https://www.kuleuven.be/research/"
+      },
+      {
+        "title": "Study",
+        "url": "https://www.kuleuven.be/english/study/"
+      },
+      {
+        "title": "About KU Leuven",
+        "url": "https://www.kuleuven.be/english/about-kuleuven/"
+      }
+    ],
+    "nav_services": [
+      {
+        "title": "A-Z",
+        "url": "#",
+        "links": [
+          {
+            "title": "Faculties",
+            "url": "https://www.kuleuven.be/english/faculties_schools"
+          },
+          {
+            "title": "Libraries",
+            "url": "https://bib.kuleuven.be/english/"
+          }
+        ]
+      },
+      {
+        "title": "Admissions",
+        "url": "https://www.kuleuven.be/admissions/",
+        "links": [
+          {
+            "title": "How to apply",
+            "url": "https://www.kuleuven.be/english/application/"
+          },
+          {
+            "title": "Scholarships",
+            "url": "https://www.kuleuven.be/english/international/funding/"
+          },
+          {
+            "title": "Degree-seeking students",
+            "url": "https://www.kuleuven.be/english/admissions/degree_seeking"
+          },
+          {
+            "title": "Non-degree-seeking students",
+            "url": "https://www.kuleuven.be/english/admissions/non_degree_seeking"
+          },
+          {
+            "title": "Doctoral students",
+            "url": "https://www.kuleuven.be/research/phd/"
+          },
+          {
+            "title": "Researchers",
+            "url": "https://www.kuleuven.be/english/admissions/researcher"
+          },
+          {
+            "title": "Short-term study visits",
+            "url": "https://www.kuleuven.be/admissions/vis_scholar/"
+          },
+          {
+            "title": "Prepare your stay",
+            "url": "https://admin.kuleuven.be/personeel/english/international_staff/"
+          }
+        ]
+      },
+      {
+        "title": "Info for",
+        "url": "#",
+        "links": [
+          {
+            "title": "Prospective students",
+            "url": "https://www.kuleuven.be/english/prospective-students"
+          },
+          {
+            "title": "Student",
+            "url": "https://www.kuleuven.be/english/education/student"
+          },
+          {
+            "title": "Job applicant",
+            "url": "https://www.kuleuven.be/personeel/jobsite/en/index"
+          },
+          {
+            "title": "Staff",
+            "url": "https://admin.kuleuven.be/intranet/english/index.html"
+          },
+          {
+            "title": "Alumnus",
+            "url": "https://alum.kuleuven.be/eng"
+          },
+          {
+            "title": "Impact on society, policy and business",
+            "url": "https://www.kuleuven.be/english/research/industry/index"
+          },
+          {
+            "title": "Press",
+            "url": "https://www.kuleuven.be/mediaresources/"
+          },
+          {
+            "title": "Donors",
+            "url": "https://www.kuleuven.be/mecenaat/en"
+          }
+        ]
+      },
+      {
+        "title": "Internal tools",
+        "url": "#",
+        "links": [
+          {
+            "title": "Toledo",
+            "url": "https://toledo.kuleuven.be/english/"
+          },
+          {
+            "title": "KU Loket",
+            "url": "https://www.kuleuven.be/sapredir/kuloket"
+          },
+          {
+            "title": "Webmail",
+            "url": "https://webmail.kuleuven.be/"
+          },
+          {
+            "title": "Intranet",
+            "url": "https://admin.kuleuven.be/intranet/english"
+          },
+          {
+            "title": "Who's who",
+            "url": "https://www.kuleuven.be/wieiswie/en/person"
+          },
+          {
+            "title": "Organisational chart",
+            "url": "https://www.kuleuven.be/wieiswie/en/unit/50000050"
+          }
+        ]
+      },
+      {
+        "title": "News",
+        "url": "https://nieuws.kuleuven.be/en"
+      },
+      {
+        "title": "Jobs",
+        "url": "https://www.kuleuven.be/personeel/jobsite/en/"
+      },
+      {
+        "title": "Contact",
+        "url": "https://www.kuleuven.be/english/contact"
+      }
+    ],
+    "search_form": {
+      "url": "//search.kuleuven.be/en/Pages/results.aspx",
+      "placeholder": "Search in KU Leuven"
+    }
+  },
+  "footer_columns": [
+    {
+      "title": "Admissions",
+      "links": [
+        {
+          "title": "How to apply",
+          "url": "https://www.kuleuven.be/english/application/"
+        },
+        {
+          "title": "Scholarships",
+          "url": "https://www.kuleuven.be/english/international/funding/"
+        },
+        {
+          "title": "Degree-seeking students",
+          "url": "https://www.kuleuven.be/english/admissions/degree_seeking"
+        },
+        {
+          "title": "Non-degree-seeking students",
+          "url": "https://www.kuleuven.be/english/admissions/non_degree_seeking"
+        },
+        {
+          "title": "Doctoral students",
+          "url": "https://www.kuleuven.be/research/phd/"
+        },
+        {
+          "title": "Researchers",
+          "url": "https://www.kuleuven.be/english/admissions/researcher"
+        },
+        {
+          "title": "Short-term study visits",
+          "url": "https://www.kuleuven.be/admissions/vis_scholar/"
+        },
+        {
+          "title": "Prepare your stay",
+          "url": "https://admin.kuleuven.be/personeel/english/international_staff/"
+        }
+      ]
+    },
+    {
+      "title": "Quicklinks",
+      "links": [
+        {
+          "title": "Accessibility KU Leuven buildings",
+          "url": "https://www.kuleuven.be/kulag/en#/"
+        },
+        {
+          "title": "Alumni",
+          "url": "https://alum.kuleuven.be/eng/"
+        },
+        {
+          "title": "International Office",
+          "url": "https://www.kuleuven.be/english/international/"
+        },
+        {
+          "title": "Student Services",
+          "url": "https://www.kuleuven.be/english/studentservices/studentservicesleuven"
+        },
+        {
+          "title": "Pangaea",
+          "url": "https://www.kuleuven.be/english/studentservices/pangaea"
+        },
+        {
+          "title": "LRD",
+          "url": "https://lrd.kuleuven.be/en/"
+        },
+        {
+          "title": "UZ Leuven",
+          "url": "https://www.uzleuven.be/en/"
+        },
+        {
+          "title": "Jobs and Careers",
+          "url": "https://www.kuleuven.be/personeel/jobsite/en/"
+        },
+        {
+          "title": "Libraries",
+          "url": "https://bib.kuleuven.be/english/"
+        },
+        {
+          "title": "News and press",
+          "url": "https://nieuws.kuleuven.be/en/"
+        },
+        {
+          "title": "Calendar",
+          "url": "https://agenda.kuleuven.be/en/"
+        },
+        {
+          "title": "Culture",
+          "url": "https://www.kuleuven.be/english/culture/"
+        },
+        {
+          "title": "Sports",
+          "url": "https://www.kuleuven.be/sport/english/"
+        },
+        {
+          "title": "KU Leuven shop",
+          "url": "https://www.kuleuven.be/shop/en/"
+        },
+        {
+          "title": "Contact",
+          "url": "https://www.kuleuven.be/english/contact"
+        }
+      ]
+    },
+    {
+      "title": "Internal tools",
+      "links": [
+        {
+          "title": "Toledo",
+          "url": "https://toledo.kuleuven.be/"
+        },
+        {
+          "title": "KU Loket",
+          "url": "https://www.kuleuven.be/sapredir/kuloket/"
+        },
+        {
+          "title": "Webmail",
+          "url": "https://webmail.kuleuven.be/"
+        },
+        {
+          "title": "Intranet",
+          "url": "https://admin.kuleuven.be/intranet/english"
+        },
+        {
+          "title": "Who's who",
+          "url": "https://www.kuleuven.be/wieiswie/en/person"
+        },
+        {
+          "title": "Organisational chart",
+          "url": "https://www.kuleuven.be/wieiswie/en/unit/50000050"
+        }
+      ]
+    },
+    {
+      "title": "Other languages",
+      "links": [
+        {
+          "title": "Nederlands",
+          "url": "https://www.kuleuven.be/"
+        },
+        {
+          "title": "Français",
+          "url": "https://www.kuleuven.be/lang/fe/"
+        },
+        {
+          "title": "Deutsch",
+          "url": "https://www.kuleuven.be/lang/de/"
+        },
+        {
+          "title": "Español",
+          "url": "https://www.kuleuven.be/lang/espanol/"
+        },
+        {
+          "title": "中文版",
+          "url": "https://www.kuleuven.be/lang/cn/"
+        },
+        {
+          "title": "Русский",
+          "url": "https://www.kuleuven.be/lang/ru/"
+        }
+      ]
+    }
+  ],
+  "super_footer_columns": [
+    {
+      "title": "About KU Leuven",
+      "links": [
+        { "title": "Mission statement", "url": "https://www.kuleuven.be/about/mission_statement" },
+        { "title": "Facts and figures", "url": "https://www.kuleuven.be/about/figures" },
+        { "title": "International networks", "url": "https://www.kuleuven.be/research/networking/" },
+        {
+          "title": "Development co-operation",
+          "url": "https://www.kuleuven.be/english/international/development-cooperation/"
+        },
+        { "title": "Academic calendar", "url": "https://www.kuleuven.be/about/calendars" },
+        { "title": "Alumni", "url": "https://alum.kuleuven.be/eng/" },
+        { "title": "Fundraising", "url": "https://www.kuleuven.be/mecenaat/en/" },
+        { "title": "Services and support", "url": "https://admin.kuleuven.be/en/facilities" },
+        { "title": "Boards and councils", "url": "https://admin.kuleuven.be/raden/en/" }
+      ]
+    },
+    {
+      "title": "Partnerships and networks",
+      "links": [
+        {
+          "title": "KU Leuven Association",
+          "url": "https://associatie.kuleuven.be/eng/"
+        },
+        {
+          "title": "LERU",
+          "url": "https://www.leru.org/"
+        },
+        {
+          "title": "Mindgate",
+          "url": "https://www.leuvenmindgate.be/"
+        },
+        {
+          "title": "Stellenbosch University",
+          "url": "https://www.sun.ac.za/english/"
+        }
+      ]
+    },
+    {
+      "title": "Research",
+      "links": [
+        { "title": "Key Areas", "url": "https://www.kuleuven.be/onderzoek/kerndomeinen.html" },
+        { "title": "Support and funding", "url": "https://www.kuleuven.be/research/support/" },
+        { "title": "Industry and society", "url": "https://www.kuleuven.be/research/industry/" },
+        { "title": "PhD", "url": "https://www.kuleuven.be/research/phd/" },
+        { "title": "Postdoc researchers", "url": "https://www.kuleuven.be/research/postdoc/" },
+        { "title": "Output and impact", "url": "https://www.kuleuven.be/research/bibliometrics/" },
+        { "title": "Networking", "url": "https://www.kuleuven.be/research/networking/" },
+        { "title": "Vision and policy", "url": "https://www.kuleuven.be/research/policy/" }
+      ]
+    },
+    {
+      "title": "Faculties",
+      "links": [
+        { "url": "https://theo.kuleuven.be/en/", "title": "Faculty of Theology and Religious Studies" },
+        { "url": "https://www.law.kuleuven.be/canon_law", "title": "Faculty of Canon Law" },
+        { "url": "https://hiw.kuleuven.be/en/", "title": "Institute of Philosophy" },
+        { "url": "https://www.law.kuleuven.be/faculty/", "title": "Faculty of Law" },
+        { "url": "https://feb.kuleuven.be/eng/", "title": "Faculty of Economics and Business" },
+        { "url": "https://soc.kuleuven.be/fsw/english", "title": "Faculty of Social Sciences" },
+        { "url": "https://www.arts.kuleuven.be/english/", "title": "Faculty of Arts" },
+        { "url": "https://ppw.kuleuven.be/english/", "title": "Faculty of Psychology and Educational Sciences" },
+        { "url": "https://arch.kuleuven.be/english/", "title": "Faculty of Architecture" },
+        { "url": "https://wet.kuleuven.be/english/", "title": "Faculty of Science" },
+        { "url": "https://eng.kuleuven.be/english/", "title": "Faculty of Engineering Science" },
+        { "url": "https://www.biw.kuleuven.be/english/", "title": "Faculty of Bioscience Engineering" },
+        { "url": "https://iiw.kuleuven.be/english/", "title": "Faculty of Engineering Technology" },
+        { "url": "https://med.kuleuven.be/eng/", "title": "Faculty of Medicine" },
+        { "url": "https://pharm.kuleuven.be/erasmus/bachmast.html", "title": "Faculty of Pharmaceutical Sciences" },
+        { "url": "https://faber.kuleuven.be/english/", "title": "Faculty of Kinesiology and Rehabilitation Sciences" }
+      ]
+    }
+  ],
+  "social": {
+    "title": "Follow KU Leuven on",
+    "facebook": "KULeuven",
+    "twitter": "LeuvenU",
+    "instagram": "kuleuven",
+    "linkedin": "ku_leuven",
+    "youtube": "KULeuven"
+  },
+  "legal": {
+    "name": "KU Leuven",
+    "disclaimer_url": "https://www.kuleuven.be/kuleuven/disclaimer.html",
+    "cookiepolicy_url": "https://admin.kuleuven.be/icts/english/cookiepolicy/"
+  },
+  "labels": {
+    "show_more": "Show more",
+    "show_less": "Show less",
+    "cookie_policy": "Cookie Policy",
+    "disclaimer": "Disclaimer"
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "abbrev": "generic",
+  "lang": "nl",
+  "org": "KULeuven",
+  "home_url": "https://www.kuleuven.be/kuleuven",
+  "org_url": "https://www.kuleuven.be",
+  "org_logo": "https://stijl.kuleuven.be/2016/img/svg/logo.svg",
+  "copyright_year": "2016",
+  "header": {
+    "nav_main": [
+      {
+        "title": "Onderzoek",
+        "url": "https://www.kuleuven.be/onderzoek/"
+      },
+      {
+        "title": "Studeren",
+        "url": "https://www.kuleuven.be/studeren/"
+      },
+      {
+        "title": "Over KU Leuven",
+        "url": "https://www.kuleuven.be/overons/"
+      }
+    ],
+    "nav_services": [
+      {
+        "title": "A-Z",
+        "url": "#",
+        "links": [
+          {
+            "title": "Bibliotheken",
+            "url": "https://bib.kuleuven.be/"
+          },
+          {
+            "title": "Campussen",
+            "url": "https://www.kuleuven.be/campus"
+          },
+          {
+            "title": "Diensten",
+            "url": "https://admin.kuleuven.be/"
+          },
+          {
+            "title": "Departementen",
+            "url": "https://www.kuleuven.be/onderzoek/onderzoekstructuur.html"
+          },
+          {
+            "title": "Faculteiten",
+            "url": "https://www.kuleuven.be/kuleuven/faculteiten"
+          },
+          {
+            "title": "Personeelsleden",
+            "url": "https://www.kuleuven.be/wieiswie"
+          }
+        ]
+      },
+      {
+        "title": "Info voor",
+        "url": "#",
+        "links": [
+          {
+            "title": "Toekomstige student",
+            "url": "https://www.kuleuven.be/toekomstigestudenten/"
+          },
+          {
+            "title": "Student",
+            "url": "https://www.kuleuven.be/studenten/"
+          },
+          {
+            "title": "Sollicitant",
+            "url": "https://www.kuleuven.be/personeel/jobsite/"
+          },
+          {
+            "title": "Personeelslid",
+            "url": "https://admin.kuleuven.be/intranet/"
+          },
+          {
+            "title": "Alumnus",
+            "url": "https://alum.kuleuven.be/"
+          },
+          {
+            "title": "Overheid, bedrijf en maatschappij",
+            "url": "https://www.kuleuven.be/onderzoek/overheid/"
+          },
+          {
+            "title": "Pers",
+            "url": "https://www.kuleuven.be/pers/"
+          },
+          {
+            "title": "Schenker",
+            "url": "https://www.kuleuven.be/mecenaat/"
+          }
+        ]
+      },
+      {
+        "title": "Interne tools",
+        "url": "#",
+        "links": [
+          {
+            "title": "Toledo",
+            "url": "https://toledo.kuleuven.be/"
+          },
+          {
+            "title": "KU Loket",
+            "url": "https://www.kuleuven.be/sapredir/kuloket"
+          },
+          {
+            "title": "Webmail",
+            "url": "https://webmail.kuleuven.be/"
+          },
+          {
+            "title": "Intranet",
+            "url": "https://admin.kuleuven.be/intranet/"
+          },
+          {
+            "title": "Wie-is-wie",
+            "url": "https://www.kuleuven.be/wieiswie"
+          },
+          {
+            "title": "Organigram",
+            "url": "https://www.kuleuven.be/wieiswie/nl/unit/50000050"
+          }
+        ]
+      },
+      {
+        "title": "Nieuws",
+        "url": "https://nieuws.kuleuven.be/"
+      },
+      {
+        "title": "Jobs",
+        "url": "https://www.kuleuven.be/personeel/jobsite/"
+      },
+      {
+        "title": "Contact",
+        "url": "https://www.kuleuven.be/kuleuven/contact"
+      }
+    ],
+    "search_form": {
+      "url": "//search.kuleuven.be/Paginas/results.aspx",
+      "placeholder": "Zoeken in KU Leuven"
+    }
+  },
+  "footer_columns": [
+    {
+      "title": "Informatie voor",
+      "links": [
+        { "url": "https://www.kuleuven.be/toekomstigestudenten/", "title": "Toekomstige student" },
+        { "url": "https://www.kuleuven.be/studenten/", "title": "Student" },
+        { "url": "https://www.kuleuven.be/onderwijs/docent", "title": "Docenten" },
+        { "url": "https://www.kuleuven.be/onderwijs/ondersteuner", "title": "Onderwijsondersteuners" },
+        { "url": "https://www.kuleuven.be/onderwijs/verantwoordelijke", "title": "Onderwijsverantwoordelijken" },
+        { "url": "https://www.kuleuven.be/personeel/jobsite/", "title": "Sollicitant" },
+        { "url": "https://alum.kuleuven.be/", "title": "Alumnus" },
+        { "url": "https://admin.kuleuven.be/intranet/", "title": "Personeel" },
+        { "url": "https://www.kuleuven.be/onderzoek/overheid/", "title": "Overheid en bedrijf" },
+        { "url": "https://www.kuleuven.be/pers/", "title": "Pers" },
+        { "url": "https://www.kuleuven.be/mecenaat/", "title": "Schenker" }
+      ]
+    },
+    {
+      "title": "Snel naar...",
+      "links": [
+        { "url": "https://www.kuleuven.be/kuleuven/faculteiten", "title": "Faculteiten" },
+        { "url": "https://www.kuleuven.be/kulag/nl#/", "title": "Toegankelijkheid gebouwen" },
+        { "url": "https://lrd.kuleuven.be/", "title": "LRD - Kennis- en technologietransfer" },
+        { "url": "https://www.uzleuven.be/", "title": "UZ Leuven" },
+        { "url": "https://www.kuleuven.be/personeel/jobsite/", "title": "Jobs" },
+        { "url": "https://www.kuleuven.be/onderzoek/doctorandi/", "title": "Doctoreren" },
+        { "url": "https://www.kuleuven.be/internationaal/", "title": "Dienst Internationalisering" },
+        { "url": "https://bib.kuleuven.be/", "title": "Bibliotheken" },
+        { "url": "https://nieuws.kuleuven.be/", "title": "Nieuws" },
+        { "url": "https://agenda.kuleuven.be/", "title": "Agenda" },
+        { "url": "https://www.kuleuven.be/cultuur/", "title": "Cultuur" },
+        { "url": "https://www.kuleuven.be/sport/", "title": "Sport" },
+        { "url": "https://www.kuleuven.be/shop/", "title": "KU&nbsp;Leuven-shop" },
+        { "url": "https://www.kuleuven.be/kuleuven/contact", "title": "Contact" }
+      ]
+    },
+    {
+      "title": "Interne tools",
+      "links": [
+        {
+          "title": "English",
+          "url": "https://www.kuleuven-kulak.be/en/"
+        },
+        {
+          "title": "Toledo",
+          "url": "https://toledo.kuleuven.be/"
+        },
+        {
+          "title": "KU Loket",
+          "url": "https://www.kuleuven.be/sapredir/kuloket/"
+        },
+        {
+          "title": "Webmail",
+          "url": "https://webmail.kuleuven.be/"
+        },
+        {
+          "title": "Intranet",
+          "url": "https://admin.kuleuven.be/intranet/"
+        },
+        {
+          "title": "Wie-is-wie",
+          "url": "https://www.kuleuven.be/wieiswie/"
+        },
+        {
+          "title": "Organigram",
+          "url": "https://www.kuleuven.be/wieiswie/nl/unit/50000050"
+        }
+      ]
+    },
+    {
+      "title": "Other languages",
+      "links": [
+        {
+          "title": "Nederlands",
+          "url": "https://www.kuleuven.be/"
+        },
+        {
+          "title": "Français",
+          "url": "https://www.kuleuven.be/lang/fe/"
+        },
+        {
+          "title": "Deutsch",
+          "url": "https://www.kuleuven.be/lang/de/"
+        },
+        {
+          "title": "Español",
+          "url": "https://www.kuleuven.be/lang/espanol/"
+        },
+        {
+          "title": "中文版",
+          "url": "https://www.kuleuven.be/lang/cn/"
+        },
+        {
+          "title": "Русский",
+          "url": "https://www.kuleuven.be/lang/ru/"
+        }
+      ]
+    }
+  ],
+  "super_footer_columns": [
+    [
+      {
+        "title": "Over KU Leuven",
+        "links": [
+          { "url": "https://www.kuleuven.be/onderwijs/onderwijsbeleid/", "title": "Onderwijsbeleid" },
+          { "url": "https://www.kuleuven.be/onderzoek/onderzoeksbeleid/", "title": "Onderzoeksbeleid" },
+          { "url": "https://www.kuleuven.be/studentenbeleid/", "title": "Studentenbeleid" },
+          { "url": "https://www.kuleuven.be/internationaal/", "title": "Internationaal beleid" },
+          { "url": "https://www.kuleuven.be/duurzaamheid", "title": "Duurzaamheidsbeleid" },
+          { "url": "https://www.kuleuven.be/diversiteit", "title": "Diversiteitsbeleid" },
+          { "url": "https://www.kuleuven.be/overons/feitenencijfers", "title": "Feiten en cijfers" },
+          { "url": "https://www.kuleuven.be/reglementen/", "title": "Reglementen" },
+          { "url": "https://www.kuleuven.be/overons/geschiedenis.html", "title": "Historiek" },
+          { "url": "https://admin.kuleuven.be/faciliteiten", "title": "Diensten" }
+        ]
+      },
+      {
+        "title": "Partnerships en netwerken",
+        "links": [
+          {
+            "title": "KU Leuven Association",
+            "url": "https://associatie.kuleuven.be/eng/"
+          },
+          {
+            "title": "LERU",
+            "url": "https://www.leru.org/"
+          },
+          {
+            "title": "Mindgate",
+            "url": "https://www.leuvenmindgate.be/"
+          },
+          {
+            "title": "Stellenbosch University",
+            "url": "https://www.sun.ac.za/english/"
+          }
+        ]
+      },
+      {
+        "title": "Doctoral schools",
+        "links": [
+          {
+            "title": "Arenberg Doctoral School",
+            "url": "https://set.kuleuven.be/phd/"
+          },
+          {
+            "title": "Doctoral School of Biomedical Sciences",
+            "url": "https://gbiomed.kuleuven.be/english/phd"
+          },
+          {
+            "title": "Doctoral School Humanities & Social Sciences",
+            "url": "https://ghum.kuleuven.be/phd"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Universiteit en Maatschappij",
+        "links": [
+          { "url": "https://www.kuleuven.be/metaforum/", "title": "Denktank Metaforum" },
+          { "url": "https://www.kuleuven.be/ontwikkelingssamenwerking/", "title": "Ontwikkelingssamenwerking" },
+          {
+            "url": "https://www.kuleuven.be/communicatie/wetenschapscommunicatie/",
+            "title": "Wetenschap voor iedereen"
+          },
+          { "url": "https://www.kuleuven.be/up/", "title": "Universitaire Parochie" }
+        ]
+      },
+      {
+        "title": "Studeren",
+        "links": [
+          { "url": "#", "title": "Studiekiezer" },
+          { "url": "https://onderwijsaanbod.kuleuven.be/opleidingen/n/", "title": "Opleidingen" },
+          {
+            "url": "https://www.kuleuven.be/toekomstigestudenten/apps/agenda/infomomenten.php",
+            "title": "Infomomenten"
+          },
+          { "url": "https://www.kuleuven.be/studentenadministratie/inschrijvingen/", "title": "Inschrijven" },
+          { "url": "https://www.kuleuven.be/studentenvoorzieningen/huisvesting/", "title": "Op kot" },
+          { "url": "https://www.kuleuven.be/onderwijs/oer/2015", "title": "Onderwijs- en examenreglement" },
+          {
+            "url": "https://www.kuleuven.be/studentenvoorzieningen/studieadvies/studiebegeleiding/studiebegeleidingkuleuven",
+            "title": "Studiebegeleiding"
+          },
+          {
+            "url": "https://www.kuleuven.be/internationaal/studenten/studereninhetbuitenland/",
+            "title": "Naar het buitenland"
+          },
+          { "url": "https://www.kuleuven.be/onderwijs/levenslangleren", "title": "Levenslang leren" },
+          { "url": "https://www.kuleuven.be/toekomstigestudenten/publicaties/", "title": "Brochures" }
+        ]
+      },
+      {
+        "title": "Onderzoek",
+        "links": [
+          {
+            "url": "https://www.kuleuven.be/onderzoek/kerndomeinen.html",
+            "title": "Departementen, onderzoeksgroepen, onderzoekscentra"
+          },
+          { "url": "https://lrd.kuleuven.be/", "title": "KU&nbsp;Leuven Research &amp; Development" },
+          { "url": "https://lrd.kuleuven.be/spinoff/spinoff-bedrijven", "title": "Spin-offs" },
+          { "url": "https://www.kuleuven.be/onderzoek/doctorandi/", "title": "Doctoreren" },
+          { "url": "https://www.kuleuven.be/onderzoek/netwerken/", "title": "Netwerken en samenwerkingen" }
+        ]
+      }
+    ],
+    [
+      {
+        "title": "Campussen",
+        "links": [
+          { "url": "https://www.kuleuven.be/campus/leuven/index.html", "title": "Leuven" },
+          { "url": "https://iiw.kuleuven.be/groept/", "title": "Campus Groep T Leuven" },
+          { "url": "https://www.kuleuven.be/campus/campusbrussel/index.html", "title": "Campus Brussel" },
+          {
+            "url": "https://www.kuleuven.be/campus/campussintlucasbrussel/index.html",
+            "title": "Campus Sint-Lucas Brussel"
+          },
+          {
+            "url": "https://www.kuleuven.be/campus/campuscarolusantwerpen/index.html",
+            "title": "Campus Carolus Antwerpen"
+          },
+          {
+            "url": "https://www.kuleuven.be/campus/campussintandriesantwerpen/index.html",
+            "title": "Campus Sint-Andries Antwerpen"
+          },
+          { "url": "https://www.kuleuven.be/campus/technologiecampusgeel/index.html", "title": "Campus Geel" },
+          {
+            "url": "https://www.kuleuven.be/campus/technologiecampusdenayersintkatelijnewaver/index.html",
+            "title": "Campus De Nayer Sint-Katelijne-Waver"
+          },
+          { "url": "https://www.kuleuven.be/campus/campussintlucasgent/index.html", "title": "Campus Sint-Lucas Gent" },
+          {
+            "url": "https://www.kuleuven.be/campus/technologiecampusgent/index.html",
+            "title": "Technologiecampus Gent"
+          },
+          { "url": "https://www.kuleuven.be/campus/technologiecampusaalst/index.html", "title": "Campus Aalst" },
+          { "url": "https://www.kuleuven-kulak.be/", "title": "Campus Kulak Kortrijk" },
+          { "url": "https://www.kuleuven.be/campus/campusbrugge/index.html", "title": "Campus Brugge" },
+          {
+            "url": "https://www.kuleuven.be/campus/technologiecampusdiepenbeek/index.html",
+            "title": "Campus Diepenbeek"
+          }
+        ]
+      },
+      {
+        "title": "Groepen",
+        "links": [
+          {
+            "title": "Groep Humane Wetenschappen",
+            "url": "https://ghum.kuleuven.be/NL"
+          },
+          {
+            "title": "Groep Wetenschap & Technologie",
+            "url": "https://set.kuleuven.be/"
+          },
+          {
+            "title": "Groep Biomedische Wetenschappen",
+            "url": "https://gbiomed.kuleuven.be/"
+          }
+        ]
+      }
+    ],
+    {
+      "title": "Faculteiten",
+      "links": [
+        { "url": "https://theo.kuleuven.be/nl/", "title": "Faculteit Theologie &amp; Religiewetenschappen" },
+        { "url": "https://hiw.kuleuven.be/nl/", "title": "Hoger Instituut voor Wijsbegeerte" },
+        { "url": "https://www.law.kuleuven.be/kerkelijk_recht", "title": "Bijzondere Faculteit Kerkelijk Recht" },
+        { "url": "https://www.law.kuleuven.be/", "title": "Faculteit Rechtsgeleerdheid" },
+        { "url": "https://feb.kuleuven.be/home/", "title": "Faculteit Economie &amp; Bedrijfswetenschappen" },
+        { "url": "https://soc.kuleuven.be/fsw", "title": "Faculteit Sociale Wetenschappen" },
+        { "url": "https://www.arts.kuleuven.be/", "title": "Faculteit Letteren" },
+        { "url": "https://ppw.kuleuven.be/home/", "title": "Faculteit Psychologie &amp; Pedagogische Wetenschappen" },
+        { "url": "https://wet.kuleuven.be/", "title": "Faculteit Wetenschappen" },
+        { "url": "https://eng.kuleuven.be/", "title": "Faculteit Ingenieurswetenschappen" },
+        { "url": "https://www.biw.kuleuven.be/", "title": "Faculteit Bio-ingenieurswetenschappen" },
+        { "url": "https://iiw.kuleuven.be/", "title": "Faculteit Industri&euml;le Ingenieurswetenschappen" },
+        { "url": "https://arch.kuleuven.be/", "title": "Faculteit Architectuur" },
+        { "url": "https://med.kuleuven.be/nl", "title": "Faculteit Geneeskunde" },
+        { "url": "https://pharm.kuleuven.be/", "title": "Faculteit Farmaceutische Wetenschappen" },
+        { "url": "https://faber.kuleuven.be/nl", "title": "Faculteit Bewegings- &amp; Revalidatiewetenschappen" }
+      ]
+    }
+  ],
+  "social": {
+    "title": "Follow KU Leuven on",
+    "facebook": "KULeuven",
+    "twitter": "LeuvenU",
+    "instagram": "kuleuven",
+    "linkedin": "ku_leuven",
+    "youtube": "KULeuven"
+  },
+  "legal": {
+    "name": "KU Leuven",
+    "disclaimer_url": "https://www.kuleuven.be/kuleuven/disclaimer.html",
+    "cookiepolicy_url": "https://admin.kuleuven.be/icts/cookiebeleid/"
+  },
+  "labels": {
+    "show_more": "Toon meer",
+    "show_less": "Toon minder",
+    "cookie_policy": "Cookiebeleid",
+    "disclaimer": "Disclaimer"
+  }
+}
