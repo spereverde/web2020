@@ -18,6 +18,18 @@ npx -p @storybook/cli sb init --type html -f
 
 ## Development (local)
 
+Live rebuild of KUL-customized bootstrap CSS:
+
+```bash
+npm run watch:css
+```
+
+Live rebuild and browsersync of storybook documentation:
+
+```bash
+npm run start-storybook
+```
+
 ## Build
 
 Build KUL-customized bootstrap CSS:
@@ -26,14 +38,14 @@ Build KUL-customized bootstrap CSS:
 npm run build:css
 ```
 
-Build KUL header/ footer includes:
+Build KUL header/ footer/ flyout includes:
 
-```
+```bash
 npm run build:includes
 ```
 
 Build static Storybook documentation distribution:
 
-```
+```bash
 npm run build-storybook
 ```

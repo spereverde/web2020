@@ -7,9 +7,6 @@ semi: true # add semicolons to end of line
 trailingComma: none
 singleQuote: true
 overrides:
-  - files: '*.vue'
-    options:
-      parser: 'vue'
   - files: '*.js'
     options:
       parser: 'babel'

@@ -1,0 +1,10 @@
+<aside class="flyout l-flyout noindex hidden-print collapse hidden-lg-up" id="flyout-menu">
+  {{> searchform header.search_form id=null }}
+  <nav class="nav nav-main">
+    {{> dropdown-menu items=header.nav_main }}
+  </nav>
+  <nav class="nav nav-service">
+    {{> dropdown-menu items=header.nav_services }}
+  </nav>
+  {{> share social }}
+</aside>

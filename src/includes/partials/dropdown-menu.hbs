@@ -1,0 +1,19 @@
+<ul>
+{{#each items }}
+  {{#if links }}
+    <li class="dropdown">
+      <a href="{{ url }}" id="{{ slugify title }}-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ title }}
+        <i class="material-icons">keyboard_arrow_down</i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="{{ slugify title }}-menu">
+        {{#each links }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+        {{/each}}
+      </ul>
+    </li>
+  {{else}}
+    <li><a href="{{ url }}">{{ title }}</a></li>
+  {{/if}}
+{{/each}}
+</ul>

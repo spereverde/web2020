@@ -170,7 +170,7 @@
         { "url": "https://agenda.kuleuven.be/", "title": "Agenda" },
         { "url": "https://www.kuleuven.be/cultuur/", "title": "Cultuur" },
         { "url": "https://www.kuleuven.be/sport/", "title": "Sport" },
-        { "url": "https://www.kuleuven.be/shop/", "title": "KU&nbsp;Leuven-shop" },
+        { "url": "https://www.kuleuven.be/shop/", "title": "KU Leuven-shop" },
         { "url": "https://www.kuleuven.be/kuleuven/contact", "title": "Contact" }
       ]
     },
@@ -337,7 +337,7 @@
             "url": "https://www.kuleuven.be/onderzoek/kerndomeinen.html",
             "title": "Departementen, onderzoeksgroepen, onderzoekscentra"
           },
-          { "url": "https://lrd.kuleuven.be/", "title": "KU&nbsp;Leuven Research &amp; Development" },
+          { "url": "https://lrd.kuleuven.be/", "title": "KU Leuven Research & Development" },
           { "url": "https://lrd.kuleuven.be/spinoff/spinoff-bedrijven", "title": "Spin-offs" },
           { "url": "https://www.kuleuven.be/onderzoek/doctorandi/", "title": "Doctoreren" },
           { "url": "https://www.kuleuven.be/onderzoek/netwerken/", "title": "Netwerken en samenwerkingen" }
