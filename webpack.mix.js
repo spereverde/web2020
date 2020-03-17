@@ -10,7 +10,6 @@ if (require('os').platform() === 'win32') mix.disableNotifications && mix.disabl
 
 if (process.env.BUILD === 'css') {
   mix.sass('src/bootstrap/main.scss', 'dist/css/');
-  process.exit(0);
 }
 
 if (process.env.BUILD === 'includes') {
@@ -43,6 +42,4 @@ if (process.env.BUILD === 'includes') {
       rename: filename => filename.replace('.hbs', '.' + dataset.lang + '.inc')
     }).then(() => console.log('Finished compiling dist/' + dataset.abbrev + ' (' + dataset.lang + ')'));
   });
-
-  process.exit(0);
 }
