@@ -4,8 +4,11 @@ import copyCodeBlock from '@pickra/copy-code-block';
 
 export default function render(html) {
   const el = document.createElement('div');
+  el.addEventListener('click', function(e) {
+    if (e.target.nodeName === 'A') {
+      e.preventDefault();
+    }
+  });
   el.innerHTML = html;
-  el.insertAdjacentHTML('beforeEnd', `<div id="html-code">${copyCodeBlock(el.innerHTML, { lang: 'html' })}</div>`);
-  hljs.initHighlighting();
   return el;
 }

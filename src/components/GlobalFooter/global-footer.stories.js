@@ -1,9 +1,8 @@
 import { storiesOf } from '@storybook/html';
 import { addReadme } from 'storybook-readme/html';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import Handlebars from 'handlebars';
 
-import template from './global-footer.html';
+import template from './global-footer.hbs';
 import readme from './readme.md';
 import render from '../../../.storybook/renderer';
 
@@ -19,6 +18,6 @@ stories.add('KUL Global footer', pms => {
   const org = select('Organization', variants, variants[0]);
   const lang = select('Language', ['nl', 'en'], 'nl');
   const container = document.createElement('div');
-  container.innerHTML = Handlebars.compile(template)(data.langs[org][lang]);
+  container.innerHTML = template(data.langs[org][lang]);
   return render(container.innerHTML);
 });

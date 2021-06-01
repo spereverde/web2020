@@ -1,0 +1,26 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".modal">Open modal</button>
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" {{#if kb}}data-bs-keyboard="true"{{/if}} data-bs-backdrop="{{backdrop}}" {{#if title}}aria-labelledby="modalTitleId"{{/if}}>
+  <div class="modal-dialog {{ size }}" role="document">
+    <div class="modal-content">
+      {{#if title }}
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId">{{ title }}</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {{/if}}
+      <div class="modal-body">
+        {{#unless title }}
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{/unless}}
+        {{{ body }}}
+      </div>
+      <div class="modal-footer">
+        {{{ footer }}}
+      </div>
+    </div>
+  </div>
+</div>

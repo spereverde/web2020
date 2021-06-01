@@ -9,7 +9,12 @@ if (require('os').platform() === 'win32') mix.disableNotifications && mix.disabl
 // code below works as a "switch" depending on the value of cross-env BUILD= in the NPM script
 
 if (process.env.BUILD === 'css') {
-  mix.sass('src/bootstrap/main.scss', 'dist/css/');
+  mix.sass('src/bootstrap/main.scss', 'dist/static/css/');
+}
+if (process.env.BUILD === 'fonts') {
+
+console.log(process.env.BUILD)
+  mix.copyDirectory('src/fonts', 'dist/static/fonts').after((stats) => { console.log(stats)})
 }
 
 if (process.env.BUILD === 'includes') {

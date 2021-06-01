@@ -1,3 +1,16 @@
-import { configure, addDecorator, addParameters } from '@storybook/html';
+import '!style-loader!css-loader!sass-loader!../src/bootstrap/main.scss';
 
-configure(require.context('../src/components', true, /\.stories\.js$/), module);
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  docs: {
+    transformSource: (src, context) => {
+      return context.storyFn(context.args).innerHTML;
+    }
+  }
+}
