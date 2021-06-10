@@ -1,51 +1,83 @@
-import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/html';
-import { addReadme } from 'storybook-readme/html';
-import { action } from '@storybook/addon-actions';
-
+import '@storybook/html';
 import template from './modal.hbs';
-import readme from './readme.md';
 import render from '../../../.storybook/renderer';
+import { Modal as bsModal } from 'bootstrap';
 
-const stories = storiesOf('Modal', module);
-stories.addParameters({ readme: { sidebar: readme }, knobs: { escapeHTML: false } });
-stories.addDecorator(addReadme);
-stories.addDecorator(withKnobs);
+const sizeOptions = [
+  '',
+  'modal-sm',
+  'modal-lg'
+];
+const backdropOptions = [
+  true,
+  false,
+  'static'
+];
 
-const sizes = {
-  small: 'modal-sm',
-  large: 'modal-lg'
-};
-const sizeOptions = Object.keys(sizes);
-const sizeClasses = Object.values(sizes);
-
-stories.add('Modal', () => {
-  const size = select('Size', sizeOptions, sizeOptions[0]);
-  const container = document.createElement('div');
-
-  container.innerHTML = template({
-    size: sizeClasses[sizeOptions.indexOf(size)],
-    backdrop: select('Backdrop', [true, false, 'static'], true),
-    title: text('Title', ''),
-    kb: boolean('ESC closes the modal', true),
-    body: text('Body', 'Are you sure?'),
-    footer: text(
-      'Footer',
-      '<button type="button" class="btn btn-primary">Save changes</button>\n<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>'
-    )
-  });
-
-  const result = render(container.innerHTML);
-  const modal = result.querySelector('.modal');
-
-  [
+const bsEvents = [
     'show.bs.modal',
     'shown.bs.modal',
     'hide.bs.modal',
     'hidden.bs.modal'
-  ].forEach((event) => {
-    modal.addEventListener(event, function(e) { console.log(e); action(event)(e) })
-  });
+  ];
 
+function Modal(options) {
+  const result = render(template(options));
+  const modal = result.querySelector('.modal');
   return result;
-});
+};
+
+
+export const Variants = Modal.bind({});
+
+Variants.args = {
+  size: '',
+  backdrop: false,
+  kb: false,
+  title: 'Confirm action',
+  body: 'Are you sure?',
+  footer: '<button type="button" class="btn btn-primary">Save changes</button>\n<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>'
+};
+
+export default {
+  title: 'Components/Modal',
+  component: Modal,
+  parameters: { 
+    actions: {
+      handles: bsEvents.map(evt => `${evt} .modal`)
+    }
+  },
+  argTypes: {
+    backdrop: {
+      options: backdropOptions,
+      control: { type: 'select' },
+      description: 'Backdrop',
+      table: { defaultValue: { summary: backdropOptions[0] }}
+    },
+    size: {
+      options: sizeOptions,
+      control: { type: 'radio' },
+      table: { defaultValue: { summary: sizeOptions[0] }}
+    },
+    kb: {
+      control: 'boolean',
+      description: 'Esc closes the modal',
+      table: { defaultValue: { summary: false }}
+    },
+    title: {
+      control: 'text',
+      description: 'Title HTML',
+      table: { defaultValue: { summary: '' }}
+    },
+    body: {
+      control: 'text',
+      description: 'Body HTML',
+      table: { defaultValue: { summary: '' }}
+    },
+    footer: {
+      control: 'text',
+      description: 'Footer HTML',
+      table: { defaultValue: { summary: '' }}
+    },
+  }
+};

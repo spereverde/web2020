@@ -1,15 +1,6 @@
-import { storiesOf } from '@storybook/html';
-import { addReadme } from 'storybook-readme/html';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
-
+import '@storybook/html';
 import template from './alert.html';
-import readme from './readme.md';
 import render from '../../../.storybook/renderer';
-
-const stories = storiesOf('Alert', module);
-stories.addParameters({ readme: { sidebar: readme } });
-stories.addDecorator(addReadme);
-stories.addDecorator(withKnobs);
 
 const variants = [
   'primary',
@@ -24,10 +15,30 @@ const variants = [
   'gray'
 ];
 
-stories.add('Alert', pms => {
-  const container = document.createElement('div');
-  container.innerHTML = template;
-  container.querySelector('.alert').className = 'alert alert-' + select('Variant', variants, variants[0]);
-  container.querySelector('.alert').textContent = text('Text', 'Download');
-  return render(container.innerHTML);
-});
+function Alert({ variant, text }) {
+  const dom = render(template);
+  dom.querySelector('.alert').className = 'alert alert-' + variant;
+  dom.querySelector('.alert').textContent = text;
+  return dom;
+};
+
+export const Variants = Alert.bind({});
+
+Variants.args = {
+  variant: variants[0],
+  text: 'Download'
+};
+
+export default {
+  title: 'Components/Alert',
+  component: Alert,
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: variants
+    },
+    text: {
+      control: 'text'
+    }
+  }
+};

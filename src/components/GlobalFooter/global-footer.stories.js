@@ -1,23 +1,34 @@
-import { storiesOf } from '@storybook/html';
-import { addReadme } from 'storybook-readme/html';
-import { withKnobs, select } from '@storybook/addon-knobs';
-
+import '@storybook/html';
 import template from './global-footer.hbs';
-import readme from './readme.md';
 import render from '../../../.storybook/renderer';
-
 import data from '../../includes/data';
 
-const stories = storiesOf('KUL', module);
-stories.addParameters({ readme: { sidebar: readme } });
-stories.addDecorator(addReadme);
-stories.addDecorator(withKnobs);
 const variants = ['general', 'kulak', 'intranet', 'hosted-by', 'landingpage'];
+const langs = ['nl', 'en'];
 
-stories.add('KUL Global footer', pms => {
-  const org = select('Organization', variants, variants[0]);
-  const lang = select('Language', ['nl', 'en'], 'nl');
-  const container = document.createElement('div');
-  container.innerHTML = template(data.langs[org][lang]);
-  return render(container.innerHTML);
-});
+function GlobalFooter({ organization, language }) {
+  return render(template(data.langs[organization][language]));
+};
+
+export const Variants = GlobalFooter.bind({});
+
+Variants.args = {
+  organization: variants[0],
+  language: langs[0]
+};
+
+export default {
+  title: 'Includes/GlobalFooter',
+  component: GlobalFooter,
+  argTypes: {
+    organization: {
+      control: 'select',
+      options: variants,
+      table: { defaultValue: { summary: false }}
+    },
+    language: {
+      control: 'radio',
+      options: langs
+    }
+  }
+};

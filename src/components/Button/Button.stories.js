@@ -34,7 +34,7 @@ const buttonSizes = {
 };
 
 /** @see https://getbootstrap.com/docs/5.0/components/buttons */
-const Button = function ({ variant, size, disabled, active, tag, outline }) {
+function Button({ variant, size, disabled, active, tag, outline }) {
   const html = `${size} ${variant} button`;
 
   const className = [
