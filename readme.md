@@ -10,13 +10,8 @@ cd web2020
 npm install
 ```
 
-If you get errors in the webpack build upon running subsequent commands, try running:
-
-```bash
-npx -p @storybook/cli sb init --type html -f
-```
-
 ## Development (local)
+
 
 Live rebuild of KUL-customized bootstrap CSS:
 
@@ -29,6 +24,8 @@ Live rebuild and browsersync of storybook documentation:
 ```bash
 npm run start-storybook
 ```
+
+If at some point you notice the addon panel has disappeared, clear localStorage, see [GH issue](https://github.com/storybookjs/storybook/issues/8383#issuecomment-541562349).
 
 ## Build
 

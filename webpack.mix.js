@@ -1,23 +1,70 @@
 const fs = require('fs');
 const mix = require('laravel-mix');
 const handlebars = require('handlebars');
+const debug = require('debug')('kul');
 
-// unfortunately your build will always fail with notifications on Windows,
-// under the hood laravel-mix uses node-notifier, which uses snoreToast, and doesn't work reliably on Windows
-if (require('os').platform() === 'win32') mix.disableNotifications && mix.disableNotifications();
+const srcDir = 'src';
+const outDir = 'docs';
+const outDirStatic = `${outDir}/static`;
+const build = {};
 
-// code below works as a "switch" depending on the value of cross-env BUILD= in the NPM script
+if (mix.inProduction())
+  mix.disableNotifications();
 
-if (process.env.BUILD === 'css') {
-  mix.sass('src/bootstrap/main.scss', 'dist/static/css/');
-}
-if (process.env.BUILD === 'fonts') {
+/** @param {import('laravel-mix')} mix */
+build.css = mix => {
+  debug('Compiling CSS...');
+  return mix
+    /** @param {import('@types/webpack')} config */
+    .override(config => {
+      console.log(config.plugins.map(p => p.constructor.name));
+      console.log(JSON.stringify(config.module.rules[6], null, 2));
+      //config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
+      console.log(config.plugins);
+    })
+    .sass('src/bootstrap/main.scss', `static/css/main.css`)
+    .setPublicPath(outDir)
+    .after(stats => debug('Finished compiling CSS...'));
+};
 
-console.log(process.env.BUILD)
-  mix.copyDirectory('src/fonts', 'dist/static/fonts').after((stats) => { console.log(stats)})
-}
+/** @param {import('laravel-mix')} mix */
+build.fonts = mix => {
+  debug('Compiling fonts CSS...');
+  mix
+    .copyDirectory('src/static/fonts', 'docs/static/fonts')
+    .sass('src/bootstrap/fonts.scss', 'static/css/fonts.css')
+    .override(config => {
+      console.log(config.plugins.map(p => p.constructor.name));
+      console.log(JSON.stringify(config.module.rules, null, 2));
+      config.module.rules.forEach(rule => {
+        if (rule.use && rule.use.length) {
+          const newUses = [];
+          rule.use.forEach(use => {
+            if (!use.loader.match('mini-css-extract-plugin'))
+              newUses.push(use);
+          })
+          rule.use = newUses;
+        }
+      })
+      config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
+      console.log(config.plugins);
+    })
+    .setPublicPath(outDir)
+    .after(stats => debug('Finished compiling fonts CSS...'));
 
-if (process.env.BUILD === 'includes') {
+};
+
+/** @param {import('laravel-mix')} mix */
+build.static = mix => {
+  debug('Copying static assets...');
+  mix
+    .setResourceRoot(srcDir)
+    .setPublicPath(outDir)
+    .copyDirectory('src/static', outDirStatic)
+    .after(stats => debug('Finished copying static assets...'));
+};
+
+build.includes = () => {
   /** How to use compileIncludes
    *  ==========================
    *  This is a custom NodeJS script that compiles a directory (non-recursively!) of Handlebars templates.
@@ -47,4 +94,13 @@ if (process.env.BUILD === 'includes') {
       rename: filename => filename.replace('.hbs', '.' + dataset.lang + '.inc')
     }).then(() => console.log('Finished compiling dist/' + dataset.abbrev + ' (' + dataset.lang + ')'));
   });
+};
+
+const selected = process.env.BUILD;
+
+if (build[selected]) {
+  build[selected](mix);
+} else {
+  console.error(`No matching build found for "${process.env.BUILD}"`);
+  process.exit(1);
 }
