@@ -7,7 +7,6 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: /home/runner/work/web2020/
 
 env:
   DEBUG: '*'
@@ -24,19 +23,23 @@ jobs:
           node-version: 12.x
 
       - name: NPM install
+        working-directory: ${{ github.workspace }}
         run: npm install
       
       - name: Static build
+        working-directory: ${{ github.workspace }}
         env:
           BUILD: static
         run: npm run build
 
       - name: KUL CSS
+        working-directory: ${{ github.workspace }}
         env:
           BUILD: css
         run: npm run build
 
       - name: KUL includes
+        working-directory: ${{ github.workspace }}
         env:
           BUILD: includes
         run: npm run build
