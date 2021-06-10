@@ -4,6 +4,11 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+
 env:
   DEBUG: '*'
 
