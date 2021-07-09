@@ -1,26 +1,56 @@
-/* all colors with explicit hex codes are KUL-defined */
+@import './fonts';
+
+$variable-prefix: kul-;
+$min-contrast-ratio:   3 !default;
+
+// customize variables found in bootstrap/scss/_variables.scss
+
+$blue:    #08a7eb !default; // KUL-specific
+$indigo:  #00446e !default; // KUL-specific
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #056188 !default; // KUL-specific
+$cyan:    #1d8db0 !default; // KUL-specific
+$gray:    #333333 !default; // KUL-specific
+$brand:   #008dad !default; // KUL-specific
+
 $colors: (
-  'blue': #08a7eb,
-  'indigo': #004070,
-  'red': #e03f47,
-  'orange': #dc9a04,
-  'yellow': #ffc857,
-  'green': #3ebd92,
-  'teal': #66b4cc,
-  'gray-dark': #333333
+  'blue': $blue,
+  'indigo':$indigo,
+  'purple': $purple,
+  'pink': $pink,
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'teal': $teal,
+  'cyan': $cyan,
+  'gray': $gray,
+  'brand': $brand
 );
 
+$primary:       $blue;
+$secondary:     $teal;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+
 $theme-colors: (
-  'primary': map-get($colors, 'blue'),
-  'secondary': #056188,
-  'tertiary': map-get($colors, 'indigo'),
-  'success': map-get($colors, 'green'),
-  'info': map-get($colors, 'teal'),
-  'warning': map-get($colors, 'orange'),
-  'danger': map-get($colors, 'red'),
-  'contact': map-get($colors, 'yellow'),
-  'brand': #1d8db0,
-  'gray': map-get($colors, 'gray-dark')
+  'primary': $blue,
+  'secondary': $cyan,
+  'tertiary':$indigo,
+  'success': $green,
+  'info': $teal,
+  'warning': $orange,
+  'danger': $red,
+  'contact': $yellow,
+  'brand': $brand,
+  'gray': $gray
 );
 
 $grid-breakpoints: (
@@ -33,20 +63,28 @@ $grid-breakpoints: (
 
 $grid-gutter-width: 20px !default;
 $body-bg: white;
-$body-color: map-get($colors, 'gray-dark');
+$body-color: $gray;
 $font-size-base: 1rem;
 
-$font-family-sans-serif: 'Open Sans', sans-serif !default;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif !default; // KUL>BS
-$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default; // KUL>BS
-$font-family-base: $font-family-sans-serif !default; // KUL>BS
+$font-family-sans-serif: 'Source Sans Pro', sans-serif !default;
+$font-family-serif: Georgia, 'Source Serif Pro', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+ 
+$headings-font-family:        $font-family-serif !default;
+$headings-font-style:         normal !default;
+$headings-font-weight:        600 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              map-get($theme-colors, 'tertiary') !default;
 
-$input-btn-padding-y: 0.625rem !default;
-$input-btn-padding-x: 1rem !default;
-$input-btn-border-width: 2px;
-$input-btn-focus-width: 0.1rem;
-$input-btn-focus-color: rgba(143, 142, 142, 0.25);
-$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(143, 142, 142, 0.25);
+$btn-padding-y: 0.5em !default;
+$btn-padding-x: 1.25em !default;
+$btn-border-radius: 0.75em !default;
+$btn-border-radius-sm: 0.75em !default;
+$btn-border-radius-lg: 0.75em !default;
+
+$link-color: map-get($theme-colors, 'tertiary') !default;
+$btn-link-color: #ffffff;
 
 // Cards
 

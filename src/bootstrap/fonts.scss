@@ -1,4 +1,4 @@
-$font-path: '../fonts/';
+$font-path: '../static/fonts/';
 
 $font-weight-light: 300 !default; //only used in components/_date.scss
 $font-weight-regular: 400 !default;
@@ -17,11 +17,6 @@ $font-weight-bold: 700 !default;
 }
 
 @include font-variant('Material Icons', normal, $font-weight-regular, 'MaterialIcons-Regular');
-@include font-variant('Merriweather', normal, $font-weight-regular, 'Merriweather-Regular-webfont');
-@include font-variant('Merriweather', italic, $font-weight-regular, 'merriweather-italic-webfont');
-@include font-variant('Open Sans', normal, $font-weight-regular, 'OpenSans-Regular');
-@include font-variant('Open Sans', normal, $font-weight-semibold, 'OpenSans-Semibold');
-@include font-variant('Open Sans', normal, $font-weight-semibold, 'OpenSans-Bold');
-@include font-variant('Open Sans', italic, $font-weight-regular, 'OpenSans-Italic');
-@include font-variant('Open Sans', italic, $font-weight-semibold, 'OpenSans-SemiboldItalic');
-@include font-variant('Open Sans', italic, $font-weight-bold, 'OpenSans-BoldItalic');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
