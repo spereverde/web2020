@@ -21,7 +21,7 @@ const buttonVariants = {
     'danger',
     'light',
     'dark',
-    'ext'
+    'brand'
   ]
 };
 

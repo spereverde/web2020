@@ -1,0 +1,26 @@
+{{#*inline "cardbody"}}
+  {{#if title }}<h3 class="card-title{{#if bgcolor}} text-white{{/if}}">{{ title }}</h3>{{/if}}
+  {{#if subtitle }}<h5 class="card-subtitle{{#if bgcolor}} text-white{{/if}}">{{ subtitle }}</h5>{{/if}}
+  <p class="card-text{{#if bgcolor}} text-white{{/if}}">{{ body }}</p>
+{{/inline}}
+
+{{#if leftImg }}
+  <div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
+          <img src="https://via.placeholder.com/128x128" alt="Placeholder" class="w-100">
+        </div>
+        <div class="col-xs-12 col-md-9">
+          {{> cardbody }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ else }}
+  <div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
+    <div class="card-body">
+    {{> cardbody }}
+    </div>
+  </div>
+{{/if}}
