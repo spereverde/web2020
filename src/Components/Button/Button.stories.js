@@ -34,16 +34,16 @@ const buttonSizes = {
 };
 
 /** @see https://getbootstrap.com/docs/5.0/components/buttons */
-function Button({ variant, size, disabled, active, tag, outline }) {
+function Button({ variant, size, disabled, active, tag, outline, classes }) {
   const html = `${size} ${variant} button`;
 
   const className = [
     'btn',
-    ` btn-${outline ? 'outline-' : ''}${variant}`,
-    size ? ` btn-${size}` : '',
-    !disabled && active ? ' active' : '',
-    disabled && tag === 'a' ? ' disabled' : ''
-  ].join('');
+    `btn-${outline ? 'outline-' : ''}${variant}`,
+    size ? `btn-${size}` : '',
+    !disabled && active ? 'active' : '',
+    disabled && tag === 'a' ? 'disabled' : ''
+  ].concat(classes).filter(str => !!str).join(' ');
   
   const elem = document.createElement(tag);
 
@@ -89,11 +89,20 @@ Variants.args = {
   tag: htmlTag.options[0],
   active: false,
   disabled: false,
-  outline: false
-}
+  outline: false,
+  classes: []
+};
 
-export const BlockButtons = Button.bind({});
+export const BlockButtons = (args) => {
+  return render([
+    Button(args).outerHTML,
+  ].join('\n'))
+};
 
+BlockButtons.args = {
+  ...Variants.args,
+  classes: ['w-100','d-block']
+};
 
 export default {
   title: 'Components/Button',
@@ -127,6 +136,11 @@ export default {
     active: {
       control: 'boolean',
       table: { defaultValue: { summary: false }}
+    },
+    classes: {
+      control: 'json',
+      description: 'An array of utility classes to apply',
+      table: { defaultValue: { summary: [] }}
     }
   }
 };

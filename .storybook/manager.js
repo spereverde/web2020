@@ -5,12 +5,12 @@ addons.setConfig({
   isFullscreen: false,
   showNav: true,
   showPanel: true,
-  panelPosition: 'bottom',
+  panelPosition: 'right',
   enableShortcuts: true,
   isToolshown: true,
   initialActive: 'sidebar',
   sidebar: {
-    showRoots: false,
+    showRoots: true,
     collapsedRoots: ['other'],
   },
   theme

@@ -1,7 +1,7 @@
 @import './fonts';
 
 $variable-prefix: kul-;
-$min-contrast-ratio:   3 !default;
+$min-contrast-ratio: 3 !default;
 
 // customize variables found in bootstrap/scss/_variables.scss
 
@@ -35,10 +35,14 @@ $colors: (
 
 $primary:       $blue;
 $secondary:     $teal;
+$tertiary:      $indigo;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
+$light:         #ededed; // KUL-specific
+$dark:          #212529;
+$color-contrast-dark: $gray;
 
 $theme-colors: (
   'primary': $blue,
@@ -50,7 +54,9 @@ $theme-colors: (
   'danger': $red,
   'contact': $yellow,
   'brand': $brand,
-  'gray': $gray
+  'body': $gray,
+  'light': $light,
+  'dark': $dark
 );
 
 $grid-breakpoints: (
@@ -67,23 +73,34 @@ $body-color: $gray;
 $font-size-base: 1rem;
 
 $font-family-sans-serif: 'Source Sans Pro', sans-serif !default;
-$font-family-serif: Georgia, 'Source Serif Pro', Times, serif !default;
+$font-family-serif:'Source Serif Pro', Georgia, Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif !default;
  
+// headings
 $headings-font-family:        $font-family-serif !default;
 $headings-font-style:         normal !default;
 $headings-font-weight:        600 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              map-get($theme-colors, 'tertiary') !default;
+$headings-color:              $tertiary !default;
 
+// buttons
 $btn-padding-y: 0.5em !default;
 $btn-padding-x: 1.25em !default;
 $btn-border-radius: 0.75em !default;
 $btn-border-radius-sm: 0.75em !default;
 $btn-border-radius-lg: 0.75em !default;
 
-$link-color: map-get($theme-colors, 'tertiary') !default;
+// scss-docs-start btn-variant-loops
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    color: white;
+  }
+}
+.btn-light, .btn-link { color: $body-color; }
+
+// link-button
+$link-color: $tertiary !default;
 $btn-link-color: #ffffff;
 
 // Cards
@@ -91,6 +108,11 @@ $btn-link-color: #ffffff;
 $card-border-width: 0;
 $card-border-radius: 0;
 $card-border-color: transparent;
+
+// Breadcrumbs 
+$breadcrumb-divider: '›' !default;
+$breadcrumb-active-color: $gray !default;
+$breadcrumb-divider-color: $gray !default;
 
 // List group
 $list-group-border-color: null;

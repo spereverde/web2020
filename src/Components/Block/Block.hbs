@@ -1,7 +1,7 @@
 {{#*inline "cardbody"}}
   {{#if title }}<h3 class="card-title{{#if bgcolor}} text-white{{/if}}">{{ title }}</h3>{{/if}}
   {{#if subtitle }}<h5 class="card-subtitle{{#if bgcolor}} text-white{{/if}}">{{ subtitle }}</h5>{{/if}}
-  <p class="card-text{{#if bgcolor}} text-white{{/if}}">{{ body }}</p>
+  <p class="card-text{{#if bgcolor}} text-white{{/if}}">{{{ body }}}</p>
 {{/inline}}
 
 {{#if leftImg }}
