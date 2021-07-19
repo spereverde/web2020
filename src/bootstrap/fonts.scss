@@ -5,18 +5,12 @@ $font-weight-regular: 400 !default;
 $font-weight-semibold: 600 !default;
 $font-weight-bold: 700 !default;
 
-@mixin font-variant($name, $style, $weight, $fileName) {
-  @font-face {
-    font-family: $name;
-    font-style: $style;
-    font-weight: $weight;
-    src:
-         url(#{$font-path}#{$fileName}.woff2) format('woff2'),
-         url(#{$font-path}#{$fileName}.woff) format('woff');
-  }
-}
-
-@include font-variant('Material Icons', normal, $font-weight-regular, 'MaterialIcons-Regular');
-
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+.material-icons {
+  font-size: 1em;
+  line-height: 1.5em;
+  vertical-align: middle;
+}

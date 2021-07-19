@@ -2,6 +2,7 @@
 
 $variable-prefix: kul-;
 $min-contrast-ratio: 3 !default;
+$enable-negative-margins: true;
 
 // customize variables found in bootstrap/scss/_variables.scss
 
@@ -126,5 +127,25 @@ $list-group-action-active-bg: null;
 //modal
 
 $modal-sm: 400px !important;
+
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5, // 8px
+  2: $spacer * 1, // 16px
+  3: $spacer * 2,   // 32px
+  4: $spacer * 3, // 48px
+  5: $spacer * 4, // 64px
+  6: $spacer * 8  // 128px
+);
+
+$navbar-nav-link-padding-x:         2rem;
+
+$navbar-light-color:                rgba($tertiary, .8);
+$navbar-light-hover-color:          $tertiary;
+$navbar-light-active-color:         $brand;
+$navbar-light-disabled-color:       rgba($tertiary, .5) !default;
+$navbar-light-toggler-border-color: rgba($tertiary, .1) !default;
 
 @import 'bootstrap/scss/bootstrap';
