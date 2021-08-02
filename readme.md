@@ -105,6 +105,7 @@ In `MyComponent.hbs`:
 ```html
 <h1>{{ text }}</h1>
 ```
+For all the syntax possibilities in `.hbs` files, see [Handlebars documentation](https://handlebarsjs.com/guide/).
 
 In `MyComponent.stories.js`:
 

@@ -61,3 +61,33 @@
     position: absolute;
   }
 }
+
+dt {
+  font-weight: $font-weight-regular;
+  font-size: larger;
+  color: $gray-500;
+}
+dd {
+  font-size: larger;
+  font-weight: $font-weight-regular;
+}
+
+blockquote {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-left: .25rem solid $gray-500;
+}
+
+.list-styled {
+  list-style-type: none;
+
+  & > li::before {
+    font-family: $font-family-icons;
+    content: 'chevron_right';
+    font-size: 1em;
+    line-height: 1.5em;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}

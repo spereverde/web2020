@@ -55,6 +55,11 @@ build.fonts = mix => {
 };
 
 /** @param {import('laravel-mix')} mix */
+build.js = mix => {
+  mix.js('src/js/index.js')
+};
+
+/** @param {import('laravel-mix')} mix */
 build.static = mix => {
   debug('Copying static assets...');
   mix

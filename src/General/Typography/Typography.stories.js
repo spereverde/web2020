@@ -40,6 +40,13 @@ export const LeadParagraph = () => {
   return dom;
 };
 
+export const Quote = () => {
+  const dom = render(`<blockquote>
+  <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue.</p>
+</blockquote>`);
+return dom;
+};
+
 export const InlineElements = () => {
   return render(`<p>You can use the mark tag to <mark>highlight</mark> text.</p>
 <p><del>This line of text is meant to be treated as deleted text.</del></p>

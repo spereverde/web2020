@@ -1,0 +1,12 @@
+{{#if useLinkTag }}
+<a class="btn btn-primary" data-bs-toggle="collapse" href="#{{ id }}" role="button" aria-expanded="false" aria-controls="{{ id }}">
+  Link with href
+</a>
+{{ else }}
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
+  Button with data-bs-target
+</button>
+{{/if}}
+<div class="collapse" id="{{ id }}">
+  {{{ content }}}
+</div>
