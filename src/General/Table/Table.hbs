@@ -1,0 +1,19 @@
+<table class="table{{#each modifiers}} table-{{ . }}{{/each}}">
+  {{#if caption}}<caption>{{ caption }}</caption>{{/if}}
+  <thead>
+    <tr>
+      {{#each headers}}
+      <th>{{{ . }}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+      {{#each . }}
+      <td>{{{ . }}}</td>
+      {{/each}}
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
