@@ -8,10 +8,10 @@ function Collapse(options) {
 }
 
 const bsEvents = [
-  'show.bs.modal',
-  'shown.bs.modal',
-  'hide.bs.modal',
-  'hidden.bs.modal'
+  'show.bs.collapse',
+  'shown.bs.collapse',
+  'hide.bs.collapse',
+  'hidden.bs.collapse'
 ];
 
 /** Also see [Bootstrap docs -> accordion](https://getbootstrap.com/docs/5.0/components/collapse/) */
