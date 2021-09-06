@@ -31,25 +31,27 @@
   }
 }
 
-.nav-link {
-  position: relative;
+.navbar-nav {
+  .nav-link {
+    position: relative;
 
-  &::after {
-    opacity: 0;
-    content: '';
-    display: block;
-    margin-top: 0.375em;
-    width: 0;
-    height: 3px;
-    transition: 0.5s width linear;
-    background-color: $tertiary;
-  }
-  &.active::after {
-    background-color: $brand;
-  }
-  &:hover::after, &.active::after {
-    width: 100%;
-    opacity: 1;
+    &::after {
+      opacity: 0;
+      content: '';
+      display: block;
+      margin-top: 0.375em;
+      width: 0;
+      height: 3px;
+      transition: 0.5s width linear;
+      background-color: $tertiary;
+    }
+    &.active::after {
+      background-color: $brand;
+    }
+    &:hover::after, &.active::after {
+      width: 100%;
+      opacity: 1;
+    }
   }
 }
 

@@ -110,7 +110,7 @@ For all the syntax possibilities in `.hbs` files, see [Handlebars documentation]
 In `MyComponent.stories.js`:
 
 ```js
-import 'storybook/@html';
+import '@storybook/html';
 import template from './MyComponent.hbs';
 import render from '../../../.storybook/renderer';
 
@@ -134,6 +134,11 @@ export const MyComponentUsedSomewhereElse = (args) => render('<p>Just some extra
 MyComponentUsedSomwehere.args = {
   text: 'Hello from somewhere specific!'
 }
+
+/*
+ * if you only define a single story for the component, give it the same name
+ * as the last part of the commponent path specified in the component definition "title" (see below, would be MyComponent)
+ */
 
 // export component definition
 export default {
