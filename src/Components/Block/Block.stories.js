@@ -1,6 +1,23 @@
-import '@storybook/html';
 import render from '../../../.storybook/renderer';
 import template from './Block.hbs';
+
+const uiKeys = {
+  title: 'Title',
+  subtitle: 'Subtitle',
+  body: 'Body text',
+  bgcolor: 'Background color',
+  imgLink: 'Image link',
+  imgAltText: 'Image alt text',
+  imgPosition: 'Image position',
+  imgToContentRatio: 'Image to content ratio'
+};
+
+const defaults = Object.values(uiKeys).reduce((acc, current) => {
+  acc[current] = '';
+  return acc;
+}, {});
+defaults[uiKeys.imgPosition] = 'left';
+defaults[uiKeys.imgToContentRatio] = '6/6';
 
 const sampleText = `<p>
   Gebruik voor het standaard tekstblok enkel knoppen met de class .btn.btn-primary (voor de blauwe knop)of de class .btn.btn-ghost-inv (transparante knop)<br>
@@ -19,13 +36,22 @@ const sampleText = `<p>
 `;
 
 function Block(options) {
-  const result = render('<div style="width: 500px; max-width: 100%;">' + template({
-    title: options['Title'],
-    subtitle: options['Subtitle'],
-    body: options['Body text'],
-    bgcolor: options['bgcolor'],
-    leftImg: options.variant === 'left-img'
-  }) + '</div>');
+  const ratio = options[uiKeys.imgToContentRatio].split('/');
+  const result = render(template({
+    title: options[uiKeys.title],
+    subtitle: options[uiKeys.subtitle],
+    contents: options[uiKeys.body],
+    bgcolor: options[uiKeys.bgcolor],
+    img: options[uiKeys.imgLink] ? ({
+      alt: options[uiKeys.imgAltText],
+      src: options[uiKeys.imgLink],
+      position: ['left', 'right', 'top', 'bottom'].reduce((all, pos) => {
+          all[pos] = pos === options[uiKeys.imgPosition];
+          return all;
+        }, {})
+    }) : null,
+    columns: { img: ratio[0], contents: ratio[1]}
+  }));
 
   return result;
 };
@@ -33,18 +59,41 @@ function Block(options) {
 export const Variants = Block.bind({});
 
 Variants.args = {
+  ...defaults,
   'Title': 'Block title',
   'Subtitle': 'Block subtitle',
   'Body text': sampleText,
-  'bgcolor': ''
 };
 
 export const WithImageLeftAligned = Block.bind({});
 
 WithImageLeftAligned.args = {
   ...Variants.args,
-  'Body text': sampleText,
-  variant: 'left-img'
+  'Image link': 'https://via.placeholder.com/300x600',
+  'Image alt': 'A placeholder',
+  'Image position': 'left'
+};
+
+
+export const WithImageRightAligned = Block.bind({});
+
+WithImageRightAligned.args = {
+  ...WithImageLeftAligned.args,
+  'Image position': 'right'
+};
+
+export const WithImageTop = Block.bind({});
+
+WithImageTop.args = {
+  ...WithImageLeftAligned.args,
+  'Image position': 'top'
+};
+
+export const WithImageBottom = Block.bind({});
+
+WithImageBottom.args = {
+  ...WithImageLeftAligned.args,
+  'Image position': 'bottom'
 };
 
 export default {
@@ -63,24 +112,43 @@ export default {
       control: 'text',
       table: { defaultValue: { summary: '' }}
     },
-    'bgcolor': {
+    'Background color': {
       control: 'select',
-        options: [
-          '',
-          'primary',
-          'secondary',
-          'tertiary',
-          'success',
-          'info',
-          'warning',
-          'danger',
-          'light',
-          'dark',
-          'brand',
-          'contact'
-        ],
+      options: [
+        '',
+        'primary',
+        'secondary',
+        'tertiary',
+        'success',
+        'info',
+        'warning',
+        'danger',
+        'light',
+        'dark',
+        'brand',
+        'contact'
+      ],
       description: 'Background color',
       table: { defaultValue: { summary: '' }}
-    }
+    },
+    'Image link': {
+      control: 'text',
+      table: { defaultValue: { summary: '' }}
+    },
+    'Image alt text': {
+      control: 'text',
+      table: { defaultValue: { summary: '' }}
+    },
+    'Image position': {
+      control: 'select',
+      options: ['left', 'right', 'top', 'bottom'],
+      table: { defaultValue: { summary: defaults[uiKeys.imgPosition] }}
+    },
+    'Image to content ratio': {
+      control: 'text',
+      description: '\\# of columns to use for image and contents (max. 12), respectively, for example: 6/6, 3/9',
+      placeholder: '6/6',
+      table: { defaultValue: { summary: defaults[uiKeys.imgToContentRatio] }}
+    },
   }
 };

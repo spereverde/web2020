@@ -32,13 +32,13 @@ If at some point you notice the addon panel has disappeared, clear localStorage,
 Build KUL-customized bootstrap CSS:
 
 ```bash
-npm run build:css
+BUILD=css npm run build
 ```
 
 Build KUL header/ footer/ flyout includes:
 
 ```bash
-npm run build:includes
+BUILD=includes npm run build
 ```
 
 Build static Storybook documentation distribution:
@@ -157,3 +157,20 @@ export default {
   }
 }
 ```
+
+## FAQ
+
+<details>
+<summary>How do I change the order of display of component/doc trees in Storybook?</summary>
+The order is determined in the `parameters.options.storySort.order` key in the [](./.storybook/preview.js) file. See also [Storybook docs](https://storybook.js.org/docs/web-components/writing-stories/naming-components-and-hierarchy#sorting-stories).
+</details>
+
+<details>
+<summary>How do I add a separate documentation page without component/stories?</summary>
+Add a folder with a `.mdx` file and the component path in a Meta tag at the start of the file, like so: `<Meta title="Path/To/PageName"/>`. See [](./src/General/Introduction/Introduction.stories.mdx) for an example.
+</details>
+
+<details>
+<summary>How do I add a single-story component?</summary>
+To add a single-story component (where the initial component display & story are merged into 1) the story name must match the last path-part of the component name specified in the component `title`. For an example, have a look at [](./src/Components/Tabs/Tabs.stories.js).
+</details>

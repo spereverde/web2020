@@ -1,6 +1,3 @@
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
-
 export default function render(html) {
   const el = document.createElement('div');
   el.addEventListener('click', function(e) {

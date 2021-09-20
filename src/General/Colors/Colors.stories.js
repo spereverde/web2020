@@ -1,4 +1,4 @@
-import render from '../.storybook/renderer';
+import render from '../../../.storybook/renderer';
 
 const themeColors = {
   primary: '#08a7eb',

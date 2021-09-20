@@ -1,26 +1,46 @@
 {{#*inline "cardbody"}}
   {{#if title }}<h3 class="card-title{{#if bgcolor}} text-white{{/if}}">{{ title }}</h3>{{/if}}
   {{#if subtitle }}<h5 class="card-subtitle{{#if bgcolor}} text-white{{/if}}">{{ subtitle }}</h5>{{/if}}
-  <p class="card-text{{#if bgcolor}} text-white{{/if}}">{{{ body }}}</p>
+  <p class="card-text{{#if bgcolor}} text-white{{/if}}">{{{ contents }}}</p>
 {{/inline}}
-
-{{#if leftImg }}
-  <div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-xs-12 col-md-3">
-          <img src="https://via.placeholder.com/128x128" alt="Placeholder" class="w-100">
-        </div>
-        <div class="col-xs-12 col-md-9">
-          {{> cardbody }}
-        </div>
+<div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
+{{#if img }}
+  {{#if img.position.left }}
+    <div class="row g-0">
+      <div class="col-xs-12 col-md-{{ columns.img }} position-relative overflow-hidden">
+        <img src="{{ img.src }}" alt="{{ img.alt }}" class="card-img position-absolute">
+      </div>
+      <div class="col-xs-12 col-md-{{ columns.contents }}">
+        <div class="card-body">{{> cardbody }}</div>
       </div>
     </div>
+  {{/if}}
+  {{#if img.position.right }}
+    <div class="row g-0">
+      <div class="col-xs-12 col-md-{{ columns.img }} order-md-2 position-relative overflow-hidden">
+        <img src="{{ img.src }}" alt="{{ img.alt }}" class="card-img position-absolute">
+      </div>
+      <div class="col-xs-12 col-md-{{ columns.contents }} order-md-1">
+        <div class="card-body">{{> cardbody }}</div>
+      </div>
+    </div>
+  {{/if}}
+  {{#if img.position.top }}
+    <img src="{{ img.src }}" alt="{{ img.alt }}" class="card-image-top">
+    <div class="card-body">{{> cardbody }}</div>
+  {{/if}}
+  {{#if img.position.bottom }}
+    <div class="card-body">{{> cardbody }}</div>
+    <img src="{{ img.src }}" alt="{{ img.alt }}" class="card-image-bottom">
+  {{/if}}
   </div>
-{{ else }}
-  <div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
+{{else}}
+{{> cardbody }}
+{{/if}}
+
+{{!--  <div class="card {{#if bgcolor}}bg-{{bgcolor}}{{/if}}">
     <div class="card-body">
     {{> cardbody }}
     </div>
   </div>
-{{/if}}
+--}}

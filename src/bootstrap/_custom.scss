@@ -10,10 +10,10 @@ $blue:    #08a7eb !default; // KUL-specific
 $indigo:  #00446e !default; // KUL-specific
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
+$red:     #EB2F00 !default; // KUL-specific
+$orange:  #D68800 !default;
 $yellow:  #ffc107 !default;
-$green:   #198754 !default;
+$green:   #31AF3C !default; // KUL-specific
 $teal:    #056188 !default; // KUL-specific
 $cyan:    #1d8db0 !default; // KUL-specific
 $gray:    #333333 !default; // KUL-specific
@@ -42,11 +42,13 @@ $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
 $light:         #ededed; // KUL-specific
+$primary-bg:    #d6ecf5;
 $dark:          #212529;
 $color-contrast-dark: $gray;
 
 $theme-colors: (
   'primary': $blue,
+  'primary-bg': $primary-bg,
   'secondary': $cyan,
   'tertiary':$indigo,
   'success': $green,
@@ -86,11 +88,9 @@ $headings-line-height:        1.2 !default;
 $headings-color:              $tertiary !default;
 
 // buttons
-$btn-padding-y: 0.5em !default;
-$btn-padding-x: 1.25em !default;
-$btn-border-radius: 0.75em !default;
-$btn-border-radius-sm: 0.75em !default;
-$btn-border-radius-lg: 0.75em !default;
+$btn-border-radius: 1.5rem !default;
+$btn-border-radius-sm: 1.5rem !default;
+$btn-border-radius-lg: 1.5rem !default;
 
 // scss-docs-start btn-variant-loops
 @each $color, $value in $theme-colors {

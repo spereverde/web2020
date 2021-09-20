@@ -1,98 +1,62 @@
+import debounce from 'lodash.debounce';
+import foreach from 'lodash.foreach';
+import scrollToTop from './scroll-to-top';
+
 "use strict";
 
-(function ($, window, document, undefined) {
-  "use strict";
+window.debounce = debounce;
 
-  window.debounce = function (func, wait, immediate) {
-    var timeout;
-    return function () {
-      var context = this,
-        args = arguments;
-      var later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+function moreMenu() {
+  window.addEventListener('resize', debounce(() => {
+    /* Make sure to only show the more menu if we are on a mobile device */
+    var button = document.querySelector(".local-header .btn-toggle");
+    if (button.style.display !== "block") {
+      self.resetList();
+    }
+  }, 450));
 
-  var moreMenu = "moreMenu",
-    defaults = {
-      propertyName: "value",
-    };
+  const menus = document.querySelectorAll(".nav-more");
+  const htmlLang = document.documentElement.getAttribute('lang');
+  const moreText = htmlLang.toLowerCase() === 'nl' ? 'Meer' : 'More';
 
-  // The actual plugin constructor
-  function Plugin(element, options) {
-    this.element = element;
-    this.settings = $.extend({}, defaults, options);
-    this._defaults = defaults;
-    this._name = moreMenu;
-    this.init();
-  }
+  foreach(menus, (menu, i) => {
+    const list = menu.querySelector('ul');
+    const form = menu.querySelector('form');
 
-  // Avoid Plugin.prototype conflicts
-  $.extend(Plugin.prototype, {
-    init: function () {
-      var self = this;
-
-      if ($(window).width() >= 768) {
-        this.renderMore();
+    const itemsHTML = [].reduce.call(list.querySelectorAll('li'), (htmlString, current) => {
+      if (!current.classList.contains('nav-more')) {
+        htmlString += current.outerHTML;
       }
+      return htmlString;
+    }, '');
 
-      $(window).on(
-        "resize",
-        debounce(
-          function () {
-            /* Make sure to only show the more menu if we are on a mobile device */
+    list.innerHTML = itemsHTML;
 
-            var $button = $(".local-header").find(".btn-toggle");
+    const moreItem = [
+      '<li class="nav-more">',
+        `<a href="#" class="dropdown-toggle" id="more-menu${i}" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">`,
+          `${moreText} <i class="material-icons">&#xE313;</i>`,
+        '</a>',
+        `<ul class="dropdown-menu" aria-labelledby="more-menu${i}" aria-expanded="false"></ul>`,
+      '</li>'
+    ].join('');
 
-            if ($button.css("display") !== "block") {
-              self.resetList();
-            }
-          },
-          450,
-          false
-        )
-      );
-    },
-    resetList: function () {
-      var $menus = $(".nav-more");
+    list.insertAdjacentHTML('beforeend', moreItem);
 
-      $menus.each(function () {
-        var $menu = $(this).find("ul"),
-          $items = $menu.find("li:not(.nav-more)").clone();
+    const menuWidth = menu.clientWidth;
 
-        $menu.empty().append($items);
-      });
-      this.renderMore();
-    },
-    renderMore: function () {
-      var $menus = $(".nav-more");
+  });
+
+
 
       $menus.each(function (i) {
         var $menu = $(this),
-          $list = $menu.find("ul"),
           $form = $menu.find("form"),
           menuWidth = $menu.width();
 
         var $morelang = $("html").attr("lang");
         var $moretext = $morelang == "nl" ? "Meer" : "More";
-        var $moreItem = $(
-            '<li class="nav-more"><a href="#" class="dropdown-toggle" id="more-menu' +
-              i +
-              '" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' +
-              $moretext +
-              ' <i class="material-icons">&#xE313;</i></a><ul class="dropdown-menu" aria-labelledby="more-menu' +
-              i +
-              '" aria-expanded="false"></ul></li>'
-          ),
           $moreList = $moreItem.find("ul");
-
-        $list.append($moreItem);
 
         var itemsTotalWidth =
           $moreItem.outerWidth() + ($form.length ? $form.outerWidth() : 0);
@@ -117,31 +81,8 @@
         if (!$moreList.is(":empty")) {
           $moreItem.show();
         }
-      });
-    },
-  });
+}
 
-  $.fn[moreMenu] = function (options) {
-    return this.each(function () {
-      if (!$.data(this, "plugin_" + moreMenu)) {
-        $.data(this, "plugin_" + moreMenu, new Plugin(this, options));
-      }
-    });
-  };
-})(jQuery, window, document);
-
-var _toggleCollapse = function () {
-  var headerSel = ".global-header, .local-header",
-    menuSel = ".navbar-collapse, .nav-tabs";
-
-  $(menuSel)
-    .on("show.bs.collapse", function () {
-      $(this).closest(headerSel).addClass("menu-open");
-    })
-    .on("hide.bs.collapse", function () {
-      $(this).closest(headerSel).removeClass("menu-open");
-    });
-};
 
 var _flyout = function () {
   var flyoutToggle = ".js-flyout-toggle",
@@ -160,11 +101,11 @@ var _flyout = function () {
  * the local header.
  *
  */
-var _addPaddingToLocalHeader = function () {
-  var $local = $(".local-header");
+const addPaddingToLocalHeader = function () {
+  var $local = document.querySelector(".local-header");
 
-  if ($local.length && !$local.find(".nav-tabs").length) {
-    $local.addClass("p-b-2");
+  if ($local && !$local.querySelector(".nav-tabs")) {
+    $local.classList.add("p-b-2");
   }
 };
 
@@ -185,36 +126,24 @@ var _activateColorbox = function () {
   }
 };
 
-/**
- * Scroll to top.
- */
-var _scrollToTop = function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 400) {
-      $(".scroll-to-top").fadeIn();
-    } else {
-      $(".scroll-to-top").fadeOut();
+function initialize() {
+  addPaddingToLocalHeader();
+
+  if (document.querySelector('.nav-more')) {
+    moreMenu();
+  }
+
+  scrollToTop({
+    selector: '.scroll-to-top'
+  });
+}
+
+if (document.readyState === 'interactive') {
+  initialize();
+} else {
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'interactive') {
+      initialize();
     }
   });
-
-  $(".scroll-to-top").click(function () {
-    $("html, body").animate(
-      {
-        scrollTop: 0,
-      },
-      600
-    );
-    return false;
-  });
-};
-
-$(function () {
-  _toggleCollapse();
-  _flyout();
-  _addPaddingToLocalHeader();
-  _activateColorbox();
-  _scrollToTop();
-
-  // Call the custom jQuery plugin, see moremenu.jquery.js
-  if ($(".nav-more").length) $("body").moreMenu();
-});
+}

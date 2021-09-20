@@ -10,7 +10,9 @@ export const parameters = {
   },
   docs: {
     transformSource: (src, context) => {
-      return context.storyFn(context.args).innerHTML;
+      const rendering = context.storyFn(context.args);
+      if (typeof rendering === 'string') return rendering
+      return rendering.innerHTML;
     }
   },
   previewHead: (head) => `

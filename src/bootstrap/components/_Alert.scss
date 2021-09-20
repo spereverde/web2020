@@ -1,0 +1,10 @@
+.alert {
+  border-color: transparent;
+  border-width: 0;
+  color: map-get($theme-colors, 'body');
+
+  &.alert-dismissable .btn-close {
+    font-size: 0.8em;
+    padding: 1.3rem 1rem;
+  }
+}

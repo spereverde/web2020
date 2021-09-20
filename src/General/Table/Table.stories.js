@@ -10,7 +10,7 @@ const defaultArgs = {
 };
 
 const dummyData = {
-  headers: ['First name', 'Last Name', 'Company <i class="material-icons">chevron_down</i>', 'Phone', 'E-mail', 'Language'],
+  headers: ['First name', 'Last Name', 'Company <i class="material-icons">expand_more</i>', 'Phone', 'E-mail', 'Language'],
   data: [
     [
       "Kathrine",
