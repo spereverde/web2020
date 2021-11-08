@@ -1,25 +1,25 @@
 import '@storybook/html';
-import template from './global-footer.hbs';
+import template from './GlobalFooter.hbs';
 import render from '../../../.storybook/renderer';
 import data from '../../includes/data';
 
 const variants = ['general', 'kulak', 'intranet', 'hosted-by', 'landingpage'];
 const langs = ['nl', 'en'];
 
-function GlobalFooter({ organization, language }) {
+function GlobalFooterComponent({ organization, language }) {
   return render(template(data.langs[organization][language]));
 };
 
-export const Variants = GlobalFooter.bind({});
+export const GlobalFooter = GlobalFooterComponent.bind({});
 
-Variants.args = {
+GlobalFooter.args = {
   organization: variants[0],
   language: langs[0]
 };
 
 export default {
   title: 'Includes/GlobalFooter',
-  component: GlobalFooter,
+  component: GlobalFooterComponent,
   argTypes: {
     organization: {
       control: 'select',

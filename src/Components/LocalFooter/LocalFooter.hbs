@@ -1,0 +1,27 @@
+<footer class="global-footer noindex {{ abbrev }} d-print-none">
+  <div class="footer-navbar card bg-tertiary p-3">
+    <div class="container">
+      <div class="row">
+        {{#each footer_columns }}
+        <nav class="col-12 col-sm-6 col-lg-3">
+          {{#if length}} {{#each .}}
+          <h4 class="card-subtitle text-white">{{ title }}</h4>
+          <ul class="list-styled text-white pt-2">
+            {{#each links }}
+            <li><a href="{{ url }}" class="text-white">{{ title }}</a></li>
+            {{/each}}
+          </ul>
+          {{/each}} {{else}}
+          <h4 class="card-subtitle text-white">{{ title }}</h4>
+          <ul class="list-styled text-white pt-2">
+            {{#each links}}
+            <li><a href="{{ url }}" class="text-white">{{ title }}</a></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </nav>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</footer>

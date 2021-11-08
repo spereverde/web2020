@@ -5,7 +5,7 @@ const uiKeys = {
   title: 'Title',
   subtitle: 'Subtitle',
   body: 'Body text',
-  bgcolor: 'Background color',
+  variant: 'Variant',
   imgLink: 'Image link',
   imgAltText: 'Image alt text',
   imgPosition: 'Image position',
@@ -41,7 +41,7 @@ function Block(options) {
     title: options[uiKeys.title],
     subtitle: options[uiKeys.subtitle],
     contents: options[uiKeys.body],
-    bgcolor: options[uiKeys.bgcolor],
+    variant: options[uiKeys.variant],
     img: options[uiKeys.imgLink] ? ({
       alt: options[uiKeys.imgAltText],
       src: options[uiKeys.imgLink],
@@ -63,6 +63,7 @@ Variants.args = {
   'Title': 'Block title',
   'Subtitle': 'Block subtitle',
   'Body text': sampleText,
+  'Variant': 'tertiary'
 };
 
 export const WithImageLeftAligned = Block.bind({});
@@ -71,7 +72,8 @@ WithImageLeftAligned.args = {
   ...Variants.args,
   'Image link': 'https://via.placeholder.com/300x600',
   'Image alt': 'A placeholder',
-  'Image position': 'left'
+  'Image position': 'left',
+  'Variant': 'primary'
 };
 
 
@@ -82,14 +84,30 @@ WithImageRightAligned.args = {
   'Image position': 'right'
 };
 
-export const WithImageTop = Block.bind({});
+export const WithImageTop = options => {
+  return [
+  '<div class="row">',
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+  '</div>'
+  ].join('\n');
+};
 
 WithImageTop.args = {
   ...WithImageLeftAligned.args,
   'Image position': 'top'
 };
 
-export const WithImageBottom = Block.bind({});
+export const WithImageBottom = options => {
+  return [
+  '<div class="row">', 
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+    '<div class="col-12 col-md-6 col-lg-4">' + Block(options).outerHTML + '</div>',
+  '</div>'
+  ].join('\n');
+};
 
 WithImageBottom.args = {
   ...WithImageLeftAligned.args,
@@ -112,10 +130,10 @@ export default {
       control: 'text',
       table: { defaultValue: { summary: '' }}
     },
-    'Background color': {
+    'Variant': {
       control: 'select',
       options: [
-        '',
+        'default',
         'primary',
         'secondary',
         'tertiary',

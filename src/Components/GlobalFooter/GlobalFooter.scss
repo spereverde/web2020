@@ -1,0 +1,20 @@
+.global-footer {
+  .footer-navbar {
+    li a {
+      line-height: 1.8rem;
+    }
+  }
+  .legal {
+    a.logo {
+      text-decoration: none;
+    }
+    a:not(:first-child) {
+      border-left: 1px solid var(--kul-body);
+    }
+  }
+  .share {
+    a, a:visited, a:hover, a:active, a:focus {
+      text-decoration: none;
+    }
+  }
+}

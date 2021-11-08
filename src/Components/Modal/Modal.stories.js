@@ -1,5 +1,5 @@
 import '@storybook/html';
-import template from './modal.hbs';
+import template from './Modal.hbs';
 import render from '../../../.storybook/renderer';
 import { Modal as bsModal } from 'bootstrap';
 
@@ -27,7 +27,9 @@ function Modal(options) {
   return result;
 };
 
-
+/**
+ * Also see [Bootstrap docs](https://getbootstrap.com/docs/5.0/components/modal/)
+ */
 export const Variants = Modal.bind({});
 
 Variants.args = {

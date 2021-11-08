@@ -1,12 +1,21 @@
+require('dotenv').config();
 const fs = require('fs');
 const mix = require('laravel-mix');
 const handlebars = require('handlebars');
 const debug = require('debug')('kul');
 
 const srcDir = 'src';
-const outDir = 'docs';
+const outDir = process.env.BUILD_DIR;
 const outDirStatic = `${outDir}/static`;
 const build = {};
+
+function cleanDirectory(dirpath) {
+  try {
+    require('child_process').execSync(`[ -d "${dirpath}" ] && rm -r ${dirpath}/`);
+  } catch (err) {
+    // fail silently
+  }
+}
 
 if (mix.inProduction())
   mix.disableNotifications();
@@ -17,10 +26,10 @@ build.css = mix => {
   return mix
     /** @param {import('@types/webpack')} config */
     .override(config => {
-      console.log(config.plugins.map(p => p.constructor.name));
-      console.log(JSON.stringify(config.module.rules[6], null, 2));
+      //console.log(config.plugins.map(p => p.constructor.name));
+      //console.log(JSON.stringify(config.module.rules[6], null, 2));
       //config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
-      console.log(config.plugins);
+      //console.log(config.plugins);
     })
     .sass('src/bootstrap/main.scss', `static/css/main.css`)
     .setPublicPath(outDir)
@@ -34,8 +43,8 @@ build.fonts = mix => {
     .copyDirectory('src/static/fonts', 'docs/static/fonts')
     .sass('src/bootstrap/fonts.scss', 'static/css/fonts.css')
     .override(config => {
-      console.log(config.plugins.map(p => p.constructor.name));
-      console.log(JSON.stringify(config.module.rules, null, 2));
+      //console.log(config.plugins.map(p => p.constructor.name));
+      //console.log(JSON.stringify(config.module.rules, null, 2));
       config.module.rules.forEach(rule => {
         if (rule.use && rule.use.length) {
           const newUses = [];
@@ -47,26 +56,54 @@ build.fonts = mix => {
         }
       })
       config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
-      console.log(config.plugins);
     })
     .setPublicPath(outDir)
     .after(stats => debug('Finished compiling fonts CSS...'));
 
 };
 
-/** @param {import('laravel-mix')} mix */
+
+/** Builds all JS files (separate dependencies, bundled)
+ * @param {import('laravel-mix')} mix
+ */
 build.js = mix => {
-  mix.js('src/js/index.js')
+  // Location of the entry point files can change with updates,
+  // always read it from the "main" field in their package.json
+  const bootstrapMain = require('bootstrap/package.json').main;
+  const colorboxMain = require('jquery-colorbox/package.json').main;
+  const jqueryMain = require('jquery/package.json').main;
+
+  cleanDirectory(`${outDirStatic}/js`);
+
+  return mix
+    // required to avoid outputting a combined LICENSE.txt in the output directory
+    .options({ terser: { extractComments: false }}) 
+    .copy(`node_modules/jquery/${jqueryMain}` , `${outDirStatic}/js/jquery.js`)
+    .copy(`node_modules/jquery-colorbox/${colorboxMain}`, `${outDirStatic}/js/jquery.colorbox.js`)
+    .copy(`node_modules/bootstrap/${bootstrapMain}`, `${outDirStatic}/js/bootstrap.js`)
+    .js('src/js/index.legacy.js', `${outDirStatic}/js/all.min.js`);
 };
 
-/** @param {import('laravel-mix')} mix */
+/**
+ * Combines tasks to output the entire static folder build: CSS, JS, fonts, images
+ * @param {import('laravel-mix')} mix
+ **/
 build.static = mix => {
   debug('Copying static assets...');
+
+  cleanDirectory(outDirStatic);
+
   mix
     .setResourceRoot(srcDir)
     .setPublicPath(outDir)
     .copyDirectory('src/static', outDirStatic)
     .after(stats => debug('Finished copying static assets...'));
+  
+  build.css(mix);
+  build.js(mix);
+  build.includes();
+
+  return mix;
 };
 
 build.includes = () => {
@@ -95,17 +132,17 @@ build.includes = () => {
       },
       src: './src/includes/templates',
       data: dataset,
-      dest: './dist/includes/' + dataset.abbrev,
+      dest: `${outDirStatic}/includes/${dataset.abbrev}`,
       rename: filename => filename.replace('.hbs', '.' + dataset.lang + '.inc')
     }).then(() => console.log('Finished compiling dist/' + dataset.abbrev + ' (' + dataset.lang + ')'));
   });
 };
 
-const selected = process.env.BUILD;
+const selected = (process.env.BUILD || '').toLowerCase();
 
 if (build[selected]) {
   build[selected](mix);
 } else {
-  console.error(`No matching build found for "${process.env.BUILD}"`);
+  console.error(`!!! No matching build found for "${process.env.BUILD}".\nSet the BUILD environment variable to one of: ${Object.keys(build)}\n`);
   process.exit(1);
 }

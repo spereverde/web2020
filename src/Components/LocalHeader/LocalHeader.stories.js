@@ -1,27 +1,25 @@
 import '@storybook/html';
 import render from '../../../.storybook/renderer';
-import template from './KulHeader.hbs';
+import template from './LocalHeader.hbs';
 
 const defaultArgs = {
-  org_url: 'https://kuleuven.be/kuleuven',
-  title: '',
-  backlink_text: 'KU Leuven Home',
+  title: 'Faculteit <x>',
   nav: null
 }
 
-function KulHeader(args = {}) {
+function LocalHeader(args = {}) {
   return render(template(Object.assign({}, defaultArgs, args)));
 }
 
-export const Standard = KulHeader.bind({});
+export const Standard = LocalHeader.bind({});
 
-export const HeaderWithTitle = KulHeader.bind({});
+export const HeaderWithTitle = LocalHeader.bind({});
 HeaderWithTitle.args = {
   title: 'Faculteit geneeskunde'
 }
 
 
-export const HeaderWithNavigation = KulHeader.bind({});
+export const HeaderWithNavigation = LocalHeader.bind({});
 HeaderWithNavigation.args = {
   title: 'Faculteit bio-ingenieurswetenschappen',
   nav: [
@@ -34,16 +32,12 @@ HeaderWithNavigation.args = {
 };
 
 export default {
-  title: 'Includes/KULHeader',
-  component: KulHeader,
+  title: 'Includes/LocalHeader',
+  component: LocalHeader,
   argTypes: {
     title: {
       control: 'text',
       table: { defaultValue: { summary: defaultArgs.title }}
-    },
-    backlink_text: {
-      control: 'text',
-      table: { defaultValue: { summary: defaultArgs.backlink_text }}
     },
     nav: {
       control: 'json',

@@ -1,0 +1,34 @@
+.card {
+  @each $color, $value in $theme-colors {
+    &.card-#{$color} {
+      background-color: $value;
+    }
+  }
+
+  &-default {
+    background-color: transparent;
+  }
+  &-primary {
+    background-color: $primary-bg !important;
+  }
+  &-secondary {
+    background-color: $secondary;
+
+    p, ul, li, h1, h2, h3, h4, h5, h6, a {
+      color: white;
+    }
+  }
+  &-tertiary {
+    background-color: $tertiary;
+
+    p, ul, li, h1, h2, h3, h4, h5, h6, a {
+      color: white;
+    }
+  }
+  &-img-top {
+    max-height: 256px;
+  }
+  &-img-bottom {
+    max-height: 256px;
+  }
+}

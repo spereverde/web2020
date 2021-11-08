@@ -83,15 +83,18 @@ blockquote {
 
 .list-styled {
   list-style-type: none;
+  padding: 0;
+  position: relative;
+  padding-left: 1.5em;
 
   & > li::before {
     font-family: $font-family-icons;
     content: 'chevron_right';
     font-size: 1em;
-    line-height: 1.5em;
-    vertical-align: middle;
-    display: inline-block;
+    color: inherit;
+    position: absolute;
+    left: 0;
   }
 }
 
-@import './components/index';
+@import './components';

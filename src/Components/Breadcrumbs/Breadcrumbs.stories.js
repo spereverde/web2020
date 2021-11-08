@@ -1,6 +1,6 @@
 import '@storybook/html';
 import render from '../../../.storybook/renderer';
-import template from './breadcrumbs.hbs';
+import template from './Breadcrumbs.hbs';
 
 function getArgs(num) {
   const data = [

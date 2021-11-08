@@ -1,5 +1,4 @@
-<footer class="global-footer noindex {{ abbrev }} hidden-print">
-
+<footer class="global-footer noindex {{ abbrev }} hidden-print d-print-none">
   {{#if footer_columns }}
   <div class="footer-navbar">
     <div class="container">
@@ -68,17 +67,21 @@
   
   <div class="bottom-footer">
     <div class="container">
-      <div class="legal">
-        <a href="{{ home_url }}" class="logo" title="KU Leuven">
-           <img class="logo-img" alt="logo" src="{{ org_logo }}" width="157" height="88">
-        </a>
-        <ul>
-          <li>{{ copyright_year }} &copy; {{ legal.name }}</li>
-          <li><a href="{{ legal.disclaimer_url }}">{{ labels.disclaimer }}</a></li>
-          <li><a href="{{ legal.cookiepolicy_url }}">{{ labels.cookie_policy }}</a></li>
-        </ul>
+      <div class="row">
+        <div class="col legal">
+          <a href="{{ home_url }}" class="logo" title="KU Leuven">
+            <img class="logo-img" alt="logo" src="{{ org_logo }}" width="157" height="88">
+          </a>
+          <ul>
+            <li>{{ copyright_year }} &copy; {{ legal.name }}</li>
+            <li><a href="{{ legal.disclaimer_url }}">{{ labels.disclaimer }}</a></li>
+            <li><a href="{{ legal.cookiepolicy_url }}">{{ labels.cookie_policy }}</a></li>
+          </ul>
+        </div>
+        <div class="col">
+        {{> share social }}
+        </div>
       </div>
-      {{> share social }}
     </div>
   </div>
 </footer>
