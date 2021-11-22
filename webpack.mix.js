@@ -40,7 +40,7 @@ build.css = mix => {
 build.fonts = mix => {
   debug('Compiling fonts CSS...');
   mix
-    .copyDirectory('src/static/fonts', 'docs/static/fonts')
+    .copyDirectory('src/static/fonts', 'dist/static/fonts')
     .sass('src/bootstrap/fonts.scss', 'static/css/fonts.css')
     .override(config => {
       //console.log(config.plugins.map(p => p.constructor.name));
