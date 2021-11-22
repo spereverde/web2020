@@ -15,18 +15,18 @@ node () {
 		remote_ftp_server = 'upload.cc.kuleuven.be'
 		if (params.PHASE == 'build') {
 			if (env.TAG_NAME) {
-				remote_location = "releases/${env.TAG_NAME}"
+				remote_location = "2022/releases/${env.TAG_NAME}"
 			} else {
-				remote_location = "branches/${env.BRANCH_NAME}"
+				remote_location = "2022/branches/${env.BRANCH_NAME}"
 			}
 		} else {
-			remote_location = "releases/${params.VERSION}"
+			remote_location = "2022/releases/${params.VERSION}"
 		}
 
-		echo "Will upload dist/ to: '${remote_ftp_server}:${remote_location}'"
+		echo "Will upload docs/ to: '${remote_ftp_server}:${remote_location}'"
 
 		try {
-			sh 'rm -rf dist'
+			sh 'rm -rf docs'
 			docker.image('registry.icts.kuleuven.be:5000/icts/icts-centos7').inside {
 				stage('install yum deps') {
 					sh 'yum -y install wget'
@@ -48,7 +48,7 @@ node () {
 					credentialsId: 'stijl-ftp', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
 					])
 				{
-					sh "lftp -u '${env.USERNAME},${env.PASSWORD}' -e 'lcd dist/; mirror -vvv -R -e ./ ${remote_location}/' '${remote_ftp_server}'"
+					sh "lftp -u '${env.USERNAME},${env.PASSWORD}' -e 'lcd docs/; mirror -vvv -R -e ./ ${remote_location}/' '${remote_ftp_server}'"
 				}
 			}
 
@@ -56,7 +56,7 @@ node () {
 		} catch (err) {
 			currentBuild.result = 'FAILURE'
 		} finally {
-			sh 'rm -rf dist'
+			sh 'rm -rf docs'
 		}
 	}
 }
