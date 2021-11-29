@@ -10,13 +10,17 @@
     "build": "node_modules/.bin/mix -p --mix-config=webpack.mix.js --no-progress",
     "serve": "source .env && node_modules/.bin/serve -p $PORT $BUILD_DIR",
     "build:static": "cross-env BUILD=static npm run build",
-    "build:all": "npm run build:static && npm run build-storybook"
+    "build:all": "npm run build:static && npm run build-storybook",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
-    "url": "git@gitea.icts.kuleuven.be:u0130662/vue-components.git"
+    "url": "git@gitea.icts.kuleuven.be:u0130662/web2022.git"
   },
-  "author": "Kim Paulissen & Kevin Van Lierde",
+  "author": "Kim Paulissen",
+  "contributors": [
+    "Kevin Van Lierde"
+  ],
   "license": "UNLICENSED",
   "dependencies": {
     "bootstrap": "^5.0.2",
@@ -44,13 +48,13 @@
     "handlebars": "^4.7.7",
     "handlebars-helpers": "^0.10.0",
     "handlebars-loader": "^1.7.1",
-    "highlight.js": "^11.3.1",
     "laravel-mix": "^6.0.19",
     "laravel-mix-alias": "^1.0.3",
     "laravel-mix-polyfill": "^2.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.foreach": "^4.5.0",
     "postcss-loader": "^5.3.0",
+    "prettier": "^2.4.1",
     "pug": ">=3.0.1",
     "react": "^16.14.0",
     "resolve-url-loader": "^4.0.0",

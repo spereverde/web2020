@@ -24,6 +24,12 @@ Live rebuild and browsersync of storybook documentation:
 npm run start-storybook
 ```
 
+Run prettier formatting before committing:
+
+```bash
+npm run format
+```
+
 If at some point you notice the addon panel has disappeared, clear localStorage, see [GH issue](https://github.com/storybookjs/storybook/issues/8383#issuecomment-541562349).
 
 ## Build
