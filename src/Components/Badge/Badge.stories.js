@@ -1,6 +1,4 @@
-import '@storybook/html';
-import template from './Badge.hbs';
-import render from '../../../.storybook/renderer';
+import Badge from './Badge';
 
 // set defaults for all arguments
 const defaultArgs = {
@@ -23,23 +21,15 @@ const themeVariants = [
   'brand'
 ];
 
-function Badge(args) {
-  return render(template({ ...defaultArgs, ...({
-    ...args,
+export const Variants = ({ contents, bgcolor, color }) => {
+  return Badge({
+    contents: contents,
     modifiers: [
-      args.color ? `text-${args.color}` : '',
-      args.bgcolor ? `bg-${args.bgcolor}` : ''
-    ].join(' ').replace(/\s+/g, ' ')
-  }) }))
-}
-
-export const Variants = (args) => render(
-    Badge({
-      contents: args.contents,
-      bgcolor: args.bgcolor,
-      color: args.color
-    }).innerHTML
-);
+      color ? `text-${color}` : '',
+      bgcolor ? `bg-${bgcolor}` : ''
+    ]
+  });
+};
 
 Variants.args = {
   contents: 'Unread',
@@ -51,40 +41,44 @@ Variants.args = {
 /**
  * A badge can have any background colors
  */
-export const BackgroundColors = () => render(
-  themeVariants.map(variant => 
+export const BackgroundColors = () => {
+  return themeVariants.map(variant => 
     Badge({
       contents: 'Unread',
-      bgcolor: variant,
-      color: variant.match(/^link|light$/) ? 'dark' : ''
-    }).innerHTML
+      modifiers: [
+        `text-${variant.match(/^link|light$/) ? 'dark' : ''}`,
+        `bg-${variant}`
+      ]
+    })
   ).join('\n')
-);
+};
 
 /**
  * A badge can have an icon
  */
-export const BadgeWithIcon = () => render(
-  [
-    Badge({
-      contents: 'Unlock <i class="material-icons">lock</i>',
-      bgcolor: 'tertiary'
-    }).innerHTML,
-    Badge({
-      contents: '<i class="material-icons">error_outline</i> important',
-      bgcolor: 'primary'
-    }).innerHTML
-  ].join('\n')
-);
+export const BadgeWithIcon = () => [
+  Badge({
+    contents: 'Unlock <i class="material-icons">lock</i>',
+    modifiers: ['bg-tertiary']
+  }),
+  Badge({
+    contents: '<i class="material-icons">error_outline</i> important',
+    modifiers: ['bg-primary']
+  })
+].join('\n');
 
-export const CampusBadge = (args) => render(
+export const CampusBadge = () => 
 `<ul class="list-unstyled campus-labels text-capitalize">
-  <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Alle campussen buiten Leuven</span></li>
-  <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Campussen Leuven</span></li>
-  <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Campus Brussel</span></li>
-  <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Campus Sint-Lucas Gent</span></li>
-</ul>`
-);
+  ${[
+    'Alle campussen buiten Leuven',
+    'Campussen Leuven',
+    'Campus Brussel',
+    'Campus Sint-Lucas Gent'
+  ].map(label => '<li>' + Badge({
+    contents: `<i class="material-icons">place</i>${label}`, 
+    modifiers: ['bg-tertiary']
+  }) + '</li>').join('')}
+</ul>`;
 
 export default {
   title: 'Components/Badge',

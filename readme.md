@@ -194,3 +194,9 @@ Add a folder with a `.mdx` file and the component path in a Meta tag at the star
 <summary>How do I add a single-story component?</summary>
 To add a single-story component (where the initial component display & story are merged into 1) the story name must match the last path-part of the component name specified in the component `title`. For an example, have a look at <a href="src/Components/Tabs/Tabs.stories.js">src/General/Introduction/Introduction.stories.mdx</a>).
 </details>
+
+
+<details>
+<summary>How do I test changes to static CSS/JS locally before they are deployed?</summary>
+
+</details>

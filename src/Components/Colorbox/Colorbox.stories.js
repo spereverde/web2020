@@ -14,14 +14,13 @@ const colorboxEvents = [
  * For more info on colorbox, see See [Colorbox docs](http://www.jacklmoore.com/colorbox/)
  */
 export const Colorbox = function({ images, albumName, albumDesc }) {
-  
-  return `${Badge({ contents: 'unread', modifiers: 'bg-primary'})}${ColorboxComponent({
+  return ColorboxComponent({
     images,
     album: {
       name: albumName,
       desc: albumDesc
     }
-  })}`;
+  });
 };
 
 Colorbox.args = {
@@ -32,6 +31,11 @@ Colorbox.args = {
   albumName: 'An album',
   albumDesc: 'An album'
 };
+Colorbox.parameters = {
+    docs: {
+      description: { story: 'For more info on colorbox, see See [Colorbox docs](http://www.jacklmoore.com/colorbox/)' }
+    },
+}
 
 export default {
   title: 'Components/Colorbox',
