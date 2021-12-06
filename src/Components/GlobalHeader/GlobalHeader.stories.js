@@ -1,5 +1,4 @@
 import '@storybook/html';
-import render from '../../../.storybook/renderer';
 import template from './GlobalHeader.hbs';
 
 const defaultArgs = {
@@ -8,7 +7,7 @@ const defaultArgs = {
 }
 
 function GlobalHeaderComponent(args = {}) {
-  return render(template(Object.assign({}, defaultArgs, args)));
+  return template((Object.assign({}, defaultArgs, args)));
 }
 
 export const GlobalHeader = GlobalHeaderComponent.bind({});

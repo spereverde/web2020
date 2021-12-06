@@ -1,4 +1,3 @@
-import render from '../../../.storybook/renderer';
 import template from './Block.hbs';
 
 const uiKeys = {
@@ -37,7 +36,7 @@ const sampleText = `<p>
 
 function Block(options) {
   const ratio = options[uiKeys.imgToContentRatio].split('/');
-  const result = render(template({
+  const result = template(({
     title: options[uiKeys.title],
     subtitle: options[uiKeys.subtitle],
     contents: options[uiKeys.body],

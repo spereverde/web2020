@@ -1,5 +1,4 @@
-import '@storybook/html';
-import render from '../../../.storybook/renderer';
+import Button from './Button';
 
 const htmlTag = {
   options: [
@@ -76,7 +75,7 @@ function Button({ variant, size, disabled, active, tag, outline, classes }) {
     elem.setAttribute('aria-disabled', 'true');
   }
 
-  const result = render(elem.outerHTML);
+  const result = elem.outerHTML;
   return result;
 };
 
@@ -94,9 +93,9 @@ Variants.args = {
 };
 
 export const BlockButtons = (args) => {
-  return render([
+  return [
     Button(args).outerHTML,
-  ].join('\n'))
+  ].join('\n')
 };
 
 BlockButtons.args = {

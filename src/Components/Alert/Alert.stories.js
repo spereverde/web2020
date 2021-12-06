@@ -1,6 +1,5 @@
 import '@storybook/html';
 import template from './Alert.hbs';
-import render from '../../../.storybook/renderer';
 
 const variants = [
   'primary',
@@ -18,7 +17,7 @@ const variants = [
 const bsEvents = ['closed.bs.alert','close.bs.alert'];
 
 function Alert(params) {
-  return render(template(params));
+  return template((params));
 };
 
 /**
@@ -53,21 +52,21 @@ export const StatusAlerts = () => {
       contents: 'Onderstaande instellingen aanpassen kan ongewenste gevolgen hebben.',
       dismissible: false,
       icon: 'error_outline'
-    }).innerHTML,
+    }),
     Alert({
       variant: 'danger',
       title: 'Fout',
       contents: 'Er is een onbekende fout opgetreden. Probeer het later opnieuw.',
       dismissible: false,
       icon: 'error_outline'
-    }).innerHTML,
+    }),
     Alert({
       variant: 'success',
       title: 'Verzonden',
       contents: 'Uw aanvraag is in behandeling. Wij contacteren u zo snel mogelijk terug',
       dismissible: false,
       icon: 'check'
-    }).innerHTML
+    })
   ].join('\n');
 };
 

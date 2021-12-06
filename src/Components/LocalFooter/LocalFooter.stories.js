@@ -1,13 +1,12 @@
 import '@storybook/html';
 import template from './LocalFooter.hbs';
-import render from '../../../.storybook/renderer';
 import data from '../../includes/data';
 
 const variants = ['general', 'kulak', 'intranet', 'hosted-by', 'landingpage'];
 const langs = ['nl', 'en'];
 
 function LocalFooter({ organization, language }) {
-  return render(template(data.langs[organization][language]));
+  return template((data.langs[organization][language]));
 };
 
 export const Variants = LocalFooter.bind({});

@@ -1,5 +1,4 @@
 import template from './Table.hbs';
-import render from '../../../.storybook/renderer';
 
 // set defaults for all arguments
 const defaultArgs = {
@@ -40,15 +39,15 @@ const dummyData = {
 };
 
 function Table(args) {
-  return render(template({ ...defaultArgs, ...args }));
+  return template(({ ...defaultArgs, ...args }));
 }
 
-export const Variants = (args) => render(
+export const Variants = (args) => 
     Table({
       data: args.data,
       headers: args.headers,
       modifiers: args.color
-    }).innerHTML
+    })
 );
 
 Variants.args = {
@@ -58,7 +57,7 @@ Variants.args = {
 /**
  * A table can have any background colors
  */
-export const BackgroundColors = () => render(
+export const BackgroundColors = () => 
   [ 
     Table({
       headers: ['First','Second'],
@@ -67,7 +66,7 @@ export const BackgroundColors = () => render(
         ['Cell 1', 'Cell 2']
       ],
       modifiers: ['dark']
-    }).innerHTML,
+    }),
     Table({
       headers: ['First','Second'],
       data: [
@@ -75,14 +74,14 @@ export const BackgroundColors = () => render(
         ['Cell 1', 'Cell 2']
       ],
       modifiers: ['success']
-    }).innerHTML
+    })
   ].join('\n')
 );
 
 /**
  * A table can be striped
  */
-export const Striped = () => render(
+export const Striped = () => 
     Table({
       headers: ['First','Second'],
       data: [
@@ -90,7 +89,7 @@ export const Striped = () => render(
         ['Cell 1', 'Cell 2']
       ],
       modifiers: ['striped']
-    }).innerHTML
+    })
 );
 
 export default {

@@ -1,10 +1,9 @@
-import render from '../../../.storybook/renderer';
 import template from './Collapse.hbs';
 
 function Collapse(options) {
   options = { ...options };
   options.useLinkTag = options.useLinkTag === 'yes' ? true : false
-  return render(template(options));
+  return template(options);
 }
 
 const bsEvents = [

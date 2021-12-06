@@ -1,6 +1,5 @@
 import '@storybook/html';
 import template from './Tabs.hbs';
-import render from '../../../.storybook/renderer';
 
 const bsEvents = [
   'show.bs.tab',
@@ -15,7 +14,7 @@ const defaultArgs = {
 };
 
 function TabsComponent(args) {
-  return render(template({ ...defaultArgs, ...args }))
+  return template(({ ...defaultArgs, ...args }))
 }
 
 /**

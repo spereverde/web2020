@@ -1,5 +1,4 @@
 import '@storybook/html';
-import render from '../../../.storybook/renderer';
 import template from './Breadcrumbs.hbs';
 
 function getArgs(num) {
@@ -14,7 +13,7 @@ function getArgs(num) {
 
 function Breadcrumbs(options) {
 
-  const result = render(template({ items: getArgs(options['Number of items'])}));
+  const result = template(({ items: getArgs(options['Number of items'])}));
   result.addEventListener('click', function(e) {
     if (e.target.nodeName !== 'A') return;
     

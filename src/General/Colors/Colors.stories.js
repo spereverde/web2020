@@ -1,4 +1,3 @@
-import render from '../../../.storybook/renderer';
 
 const themeColors = {
   primary: '#08a7eb',
@@ -25,7 +24,7 @@ const themeColorsHTML = fn => [
  */
 
 export function Colors() {
-  const dom = render(themeColorsHTML(name => `  <div class="col-xs-2 col-md-1 px-1 py-4 text-white text-center bg-${name}">${name}</div>`));
+  const dom = themeColorsHTML(name => `  <div class="col-xs-2 col-md-1 px-1 py-4 text-white text-center bg-${name}">${name}</div>`);
   return dom;
 };
 
@@ -34,7 +33,7 @@ export function Colors() {
  */
 
 export const ColoredLinks = () => {
-  const dom = render(themeColorsHTML(name => `  <a href="#" class="link-${name}">${name} link</a>`));
+  const dom = themeColorsHTML(name => `  <a href="#" class="link-${name}">${name} link</a>`);
   return dom;
 }
 

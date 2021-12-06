@@ -1,6 +1,5 @@
 import '@storybook/html';
 import template from './Modal.hbs';
-import render from '../../../.storybook/renderer';
 import { Modal as bsModal } from 'bootstrap';
 
 const sizeOptions = [
@@ -22,7 +21,7 @@ const bsEvents = [
   ];
 
 function Modal(options) {
-  const result = render(template(options));
+  const result = template((options));
   const modal = result.querySelector('.modal');
   return result;
 };

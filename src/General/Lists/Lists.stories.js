@@ -1,7 +1,6 @@
-import render from '../../../.storybook/renderer';
 
 export function AllFlavorsCombined() {
-  return render(`<ol>
+  return `<ol>
   <li>An ordered list</li>
   <li>With a nested unstyled list:
     <ul class="list-unstyled">
@@ -33,7 +32,7 @@ export function AllFlavorsCombined() {
  */
 
 export const OrderedLists = () => {
-  const dom = render(`<ol>
+  const dom = `<ol>
   <li>This is an <strong>ordered</strong> list.</li>
   <li>It is numbered.</li>
 </ol>`);
@@ -41,7 +40,7 @@ export const OrderedLists = () => {
 };
 
 export const UnstyledLists = () => {
-  const dom = render(`<ul class="list-unstyled">
+  const dom = `<ul class="list-unstyled">
   <li>This is an <strong>unstyled</strong> list.</li>
   <li>It appears completely unstyled.</li>
   <li>Structurally, it's still a list.</li>
@@ -50,7 +49,7 @@ export const UnstyledLists = () => {
 };
 
 export const StyledLists = () => {
-  const dom = render(`<ul class="list-styled">
+  const dom = `<ul class="list-styled">
   <li>This is a <strong>styled</strong> list.</li>
   <li>Its markers are chevron_right: <i class="material-icons">chevron_right</i></li>
   <li>It is included specifically for KU Leuven.</li>
@@ -59,7 +58,7 @@ export const StyledLists = () => {
 };
 
 export const DefinitionLists = () => {
-  const dom = render(`<dl>
+  const dom = `<dl>
   <dt>Euismod Aenean</dt>
   <dd>Aenean venenatis, dolor quid non lectus ac cursus posuere</dd>
   <dt>Magna Lorem</dt>
