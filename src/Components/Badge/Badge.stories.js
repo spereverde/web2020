@@ -78,7 +78,7 @@ export const BadgeWithIcon = () => render(
 );
 
 export const CampusBadge = (args) => render(
-`<ul class="list-unstyled campus-labels text-uppercase">
+`<ul class="list-unstyled campus-labels text-capitalize">
   <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Alle campussen buiten Leuven</span></li>
   <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Campussen Leuven</span></li>
   <li><span class="badge bg-tertiary"><i class="material-icons">place</i> Campus Brussel</span></li>

@@ -1,0 +1,35 @@
+<div class='colorbox-wrapper block'>
+  <div class='images'>
+    {{#each images}}
+    {{#if @first}}
+    <a
+      rel='{{ ../album.name}}'
+      href='{{href}}'
+      class='colorbox cboxElement'
+      title='{{title}}'
+    >
+      <img
+        src="{{ href }}"
+        class='img-fluid'
+        alt="{{ title }}"
+      />
+      {{#if ../moreThan1 }}
+      <span class='gallery-pager'>
+        <i class='material-icons'>
+          collections
+        </i>
+        {{ count }}
+      </span>
+      {{/if}}
+    </a>
+    {{else}}
+      <a
+        rel='{{ ../album.name}}'
+        href='{{href}}'
+        class='colorbox cboxElement'
+        title='{{title}}'
+      ></a>
+    {{/if}}
+    {{/each}}
+  </div>
+</div>

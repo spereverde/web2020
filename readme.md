@@ -61,17 +61,21 @@ src
 ├── Components
 │   ├── ComponentA
 │   │   ├── ComponentA.hbs
+│   │   ├── ComponentA.js
+│   │   ├── ComponentA.scss
 │   │   └── ComponentA.stories.js
 │   └── ComponentB
 │   │   ├── ComponentB.hbs
+│   │   ├── ComponentB.js
+│   │   ├── ComponentB.scss
 │   │   └── ComponentB.stories.js
 ├── General
 │   ├── Colors
 │   └── Typography
-├── bootstrap
-│   ├── _custom.scss
+├── scss
+│   ├── bootstrap.scss
 │   ├── fonts.scss
-│   └── main.scss
+│   └── all.scss
 ├── includes
 │   ├── data
 │   ├── partials
@@ -86,16 +90,18 @@ src
 
 In the `src` folder the contents are organized as follows:
 
-- `/bootstrap` contains 3 main entry-point SCSS files:
-  - `_custom.scss` is used to customize the Bootstrap theme by overwriting defaults found in `bootstrap/scss/_variables.scss`.
+- `/scss` contains 3 main entry-point SCSS files:
+  - `_base.scss` is used to customize the Bootstrap theme by overwriting defaults found in `bootstrap/scss/_variables.scss`.
+  - `_components.scss` groups all component-specific styles for KUL components.
   - `fonts.scss` loads all the fonts required by KU Leuven websites
-  - `main.scss` is used to add custom style rules that require more than changing a Bootstrap variable
+  - `all.scss` is used to add custom style rules that require more than changing a Bootstrap variable
 - `/js` contains different entry-points for Webpack output bundles
 - `/static` houses all static content, like logo's, images, and webfonts
 - All other directories in `src` contain components that can be displayed in Storybook. They consist of:
-  - `MyComponent.stories.js` - a file containing all the stories relating to `MyComponent`
-  - `MyComponent.hbs` - _(optionally)_ a file defining a Handlebars template to render a `MyComponent`. When this file is not defined, the templates are defined inline, within `MyComponent.stories.js`.
-
+  - `MyComponent.hbs` - a file defining a Handlebars template to render a `MyComponent`. When this file is not defined, the templates are defined inline, within `MyComponent.stories.js`.
+  - `MyComponent.js` - a JS component that parses/ passes arguments to the Handlebars template `MyComponent.hbs`
+  - `MyComponent.stories.js` - a file containing all the stories relating to `MyComponent.js`
+  - `MyComponent.scss` - _(optionally)_ component-specific style rules
 ### Adding a new component + stories
 
 Add a folder under `/Components` with the name of the new component and the relevant files:
@@ -104,6 +110,8 @@ Add a folder under `/Components` with the name of the new component and the rele
 Components
 └── MyComponent
     ├── MyComponent.hbs
+    ├── MyComponent.scss
+    ├── MyComponent.js
     └── MyComponent.stories.js
 ```
 
@@ -115,22 +123,28 @@ In `MyComponent.hbs`:
 
 For all the syntax possibilities in `.hbs` files, see [Handlebars documentation](https://handlebarsjs.com/guide/).
 
+In `MyComponent.js`:
+
+```js
+import template from './MyComponent.hbs';
+
+const defaults = {};
+
+// base component
+export default function MyComponent(args) {
+  return template({ ...defaults, ...args }));
+}
+```
+
 In `MyComponent.stories.js`:
 
 ```js
-import '@storybook/html';
-import template from './MyComponent.hbs';
-import render from '../../../.storybook/renderer';
+import MyComponent from './MyComponent.js';
 
 // set defaults for all arguments
 const defaultArgs = {
   text: 'Hello World'
 };
-
-// base component
-function MyComponent(args) {
-  return render(template({ ...defaultArgs, ...args }));
-}
 
 // define 1 or multiple stories. You can do "MyComponent.bind({})" to create a story, and add its arg values to its "args" property
 export const MyComponentUsedSomewhere = MyComponent.bind({});
@@ -145,7 +159,7 @@ MyComponentUsedSomwehere.args = {
 
 /*
  * if you only define a single story for the component, give it the same name
- * as the last part of the commponent path specified in the component definition "title" (see below, would be MyComponent)
+ * as the last part of the component path specified in the component definition "title" (see below, would be MyComponent)
  */
 
 // export component definition
@@ -168,15 +182,15 @@ export default {
 
 <details>
 <summary>How do I change the order of display of component/doc trees in Storybook?</summary>
-The order is determined in the `parameters.options.storySort.order` key in the [](./.storybook/preview.js) file. See also [Storybook docs](https://storybook.js.org/docs/web-components/writing-stories/naming-components-and-hierarchy#sorting-stories).
+The order is determined in the `parameters.options.storySort.order` key in the <a href=".storybook/preview.js">.storybook/preview.js file</a>. See also <a href="https://storybook.js.org/docs/web-components/writing-stories/naming-components-and-hierarchy#sorting-stories">Storybook docs</a>.
 </details>
 
 <details>
 <summary>How do I add a separate documentation page without component/stories?</summary>
-Add a folder with a `.mdx` file and the component path in a Meta tag at the start of the file, like so: `<Meta title="Path/To/PageName"/>`. See [](./src/General/Introduction/Introduction.stories.mdx) for an example.
+Add a folder with a `.mdx` file and the component path in a Meta tag at the start of the file, like so: `<Meta title="Path/To/PageName"/>`. See <a href="src/General/Introduction/Introduction.stories.mdx">src/General/Introduction/Introduction.stories.mdx</a> for an example.
 </details>
 
 <details>
 <summary>How do I add a single-story component?</summary>
-To add a single-story component (where the initial component display & story are merged into 1) the story name must match the last path-part of the component name specified in the component `title`. For an example, have a look at [](./src/Components/Tabs/Tabs.stories.js).
+To add a single-story component (where the initial component display & story are merged into 1) the story name must match the last path-part of the component name specified in the component `title`. For an example, have a look at <a href="src/Components/Tabs/Tabs.stories.js">src/General/Introduction/Introduction.stories.mdx</a>).
 </details>

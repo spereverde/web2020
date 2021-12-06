@@ -1,7 +1,5 @@
 require('dotenv').config();
-const fs = require('fs');
 const mix = require('laravel-mix');
-const handlebars = require('handlebars');
 const debug = require('debug')('kul');
 
 const srcDir = 'src';
@@ -25,26 +23,19 @@ build.css = mix => {
   debug('Compiling CSS...');
   return mix
     /** @param {import('@types/webpack')} config */
-    .override(config => {
-      //console.log(config.plugins.map(p => p.constructor.name));
-      //console.log(JSON.stringify(config.module.rules[6], null, 2));
-      //config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
-      //console.log(config.plugins);
-    })
-    .sass('src/bootstrap/main.scss', `static/css/main.css`)
+    .sass('src/scss/all.scss', `${outDirStatic}/css/all.min.css`)
+    .sass('src/scss/bootstrap.scss', `${outDirStatic}/css/bootstrap.min.css`)
+    .sass('src/scss/fonts.scss', `${outDirStatic}/css/fonts.min.css`)
     .setPublicPath(outDir)
-    .after(stats => debug('Finished compiling CSS...'));
+    .after(stats => setImmediate(() => debug('Finished compiling CSS...')));
 };
 
 /** @param {import('laravel-mix')} mix */
 build.fonts = mix => {
   debug('Compiling fonts CSS...');
   mix
-    .copyDirectory('src/static/fonts', 'docs/static/fonts')
-    .sass('src/bootstrap/fonts.scss', 'static/css/fonts.css')
+    .copyDirectory('src/static/fonts', `${outDirStatic}/fonts`)
     .override(config => {
-      //console.log(config.plugins.map(p => p.constructor.name));
-      //console.log(JSON.stringify(config.module.rules, null, 2));
       config.module.rules.forEach(rule => {
         if (rule.use && rule.use.length) {
           const newUses = [];
@@ -58,7 +49,7 @@ build.fonts = mix => {
       config.plugins.splice(config.plugins.map(p => p.constructor.name).indexOf('MiniCssExtractPlugin'), 1);
     })
     .setPublicPath(outDir)
-    .after(stats => debug('Finished compiling fonts CSS...'));
+    .after(stats => setImmediate(() => debug('Finished compiling fonts CSS...')));
 
 };
 
@@ -138,7 +129,7 @@ build.includes = () => {
   });
 };
 
-const selected = (process.env.BUILD || '').toLowerCase();
+const selected = (process.env.BUILD || '');
 
 if (build[selected]) {
   build[selected](mix);

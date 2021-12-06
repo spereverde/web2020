@@ -29,7 +29,6 @@ export const Fonts = () => {
  * Heading tags from `h1` to `h6`. The heading styles can also be added to any other element by using a class: `class="h4"`.  
  * Also see https://getbootstrap.com/docs/5.0/content/typography/#headings
  */
-
 export const Headings = () => {
   const dom = render(htags.map(htag => `<${htag}>${htag.toUpperCase()} title</${htag}>`).join('\n'));
   return dom;
