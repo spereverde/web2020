@@ -93,8 +93,9 @@ In the `src` folder the contents are organized as follows:
 - `/scss` contains 3 main entry-point SCSS files:
   - `_base.scss` is used to customize the Bootstrap theme by overwriting defaults found in `bootstrap/scss/_variables.scss`.
   - `_components.scss` groups all component-specific styles for KUL components.
-  - `fonts.scss` loads all the fonts required by KU Leuven websites
-  - `all.scss` is used to add custom style rules that require more than changing a Bootstrap variable
+  - `fonts.scss` *(output entrypoint)* loads all the fonts required by KU Leuven websites
+  - `bootstrap.scss` *(output entrypoint)* is used to add custom style rules that require more than changing a Bootstrap variable
+  - `all.scss` *(output entrypoint)* groups all CSS together
 - `/js` contains different entry-points for Webpack output bundles
 - `/static` houses all static content, like logo's, images, and webfonts
 - All other directories in `src` contain components that can be displayed in Storybook. They consist of:
@@ -198,5 +199,9 @@ To add a single-story component (where the initial component display & story are
 
 <details>
 <summary>How do I test changes to static CSS/JS locally before they are deployed?</summary>
+Find the browser add-on **ModHeader** in the Chrome webstore/ Firefox add-ons and install it.<br> 
+Load the page you want to test with a new style/JS in the browser, and serve the project locally (<code>npm run start-storybook</code> or <code>npm run build-storybook && serve $BUILD_DIR</code>).
+
+In the Modheader extension, click **+**, and add a **URL Redirect**. To fill in 'From', Inspect element on the webpage and find the FULL url you want to redirect locally. To fill in 'To', this should be `http://localhost:$PORT/static/**/file.ext`, for example to overwrite the KUL WMS css on https://feb.kuleuven.be/home/, you would configure the rule as From: https://stijl.kuleuven.be/releases/latest/css/wms.css & To: http://localhost:5599/static/css/wms.css
 
 </details>
