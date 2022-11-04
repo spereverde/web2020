@@ -1,4 +1,3 @@
-
 export function AllFlavorsCombined() {
   return `<ol>
   <li>An ordered list</li>
@@ -22,12 +21,11 @@ export function AllFlavorsCombined() {
       <dd>Definition desc 2</dd>
     </dl>
   </li>
-</ol>`);
-};
-
+</ol>`;
+}
 
 /**
- * Heading tags from `h1` to `h6`. The heading styles can also be added to any other element by using a class: `class="h4"`.  
+ * Heading tags from `h1` to `h6`. The heading styles can also be added to any other element by using a class: `class="h4"`.
  * Also see https://getbootstrap.com/docs/5.0/content/typography/#headings
  */
 
@@ -35,7 +33,7 @@ export const OrderedLists = () => {
   const dom = `<ol>
   <li>This is an <strong>ordered</strong> list.</li>
   <li>It is numbered.</li>
-</ol>`);
+</ol>`;
   return dom;
 };
 
@@ -44,7 +42,7 @@ export const UnstyledLists = () => {
   <li>This is an <strong>unstyled</strong> list.</li>
   <li>It appears completely unstyled.</li>
   <li>Structurally, it's still a list.</li>
-</ul>`);
+</ul>`;
   return dom;
 };
 
@@ -53,7 +51,7 @@ export const StyledLists = () => {
   <li>This is a <strong>styled</strong> list.</li>
   <li>Its markers are chevron_right: <i class="material-icons">chevron_right</i></li>
   <li>It is included specifically for KU Leuven.</li>
-</ul>`);
+</ul>`;
   return dom;
 };
 
@@ -67,7 +65,7 @@ export const DefinitionLists = () => {
   <dd>Tempus nullam at turpis sit amet mauris ornare pharetra</dd>
   <dt>Sollicitudin Malesuada Adipiscing</dt>
   <dd>Maecenas nec risus urna, a faucibus tortor</dd>
-</dl>`);
+</dl>`;
   return dom;
 };
 
@@ -75,4 +73,4 @@ export default {
   title: 'General/Lists',
   component: AllFlavorsCombined,
   parameters: {}
-};  
+};

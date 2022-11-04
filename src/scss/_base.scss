@@ -4,22 +4,22 @@ $enable-negative-margins: true;
 
 // customize variables found in bootstrap/scss/_variables.scss
 
-$blue:    #08a7eb !default; // KUL-specific
-$indigo:  #00446e !default; // KUL-specific
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #EB2F00 !default; // KUL-specific
-$orange:  #D68800 !default;
-$yellow:  #ffc107 !default;
-$green:   #31AF3C !default; // KUL-specific
-$teal:    #056188 !default; // KUL-specific
-$cyan:    #1d8db0 !default; // KUL-specific
-$gray:    #333333 !default; // KUL-specific
-$brand:   #008dad !default; // KUL-specific
+$blue: #067aac !default; // KUL-specific
+$indigo: #147fa1 !default; // KUL-specific
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #e03f47 !default; // KUL-specific
+$orange: #d68800 !default;
+$yellow: #dc9a04 !default;
+$green: #3ebd92 !default; // KUL-specific
+$teal: #004070 !default; // KUL-specific
+$cyan: #1d8db0 !default; // KUL-specific
+$gray: #333333 !default; // KUL-specific
+$brand: #067aac !default; // KUL-specific
 
 $colors: (
   'blue': $blue,
-  'indigo':$indigo,
+  'indigo': $indigo,
   'purple': $purple,
   'pink': $pink,
   'red': $red,
@@ -32,28 +32,28 @@ $colors: (
   'brand': $brand
 );
 
-$primary:       $blue;
-$secondary:     $indigo;
-$tertiary:      $teal;
-$success:       $green;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$light:         #ededed; // KUL-specific
-$primary-bg:    #d6ecf5;
-$dark:          #212529;
+$primary: $blue;
+$secondary: $indigo;
+$tertiary: $teal;
+$success: $green;
+$info: $teal;
+$warning: $yellow;
+$danger: $red;
+$light: #ededed; // KUL-specific
+$primary-bg: #d4e7f3;
+$dark: #333333;
 $color-contrast-dark: $gray;
 
 $theme-colors: (
   'primary': $blue,
   'primary-bg': $primary-bg,
   'secondary': $cyan,
-  'tertiary':$indigo,
+  'tertiary': $indigo,
   'success': $green,
   'info': $teal,
   'warning': $orange,
   'danger': $red,
-  'contact': $yellow,
+  'contact': $cyan,
   'brand': $brand,
   'body': $gray,
   'light': $light,
@@ -74,16 +74,16 @@ $body-color: $gray;
 $font-size-base: 1rem;
 
 $font-family-sans-serif: 'Source Sans Pro', sans-serif !default;
-$font-family-serif:'Source Serif Pro', Georgia, Times, serif !default;
+$font-family-serif: 'Source Serif Pro', Georgia, Times, serif !default;
 $font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base: $font-family-sans-serif !default;
- 
+
 // headings
-$headings-font-family:        $font-family-serif !default;
-$headings-font-style:         normal !default;
-$headings-font-weight:        600 !default;
-$headings-line-height:        1.2 !default;
-$headings-color:              $tertiary !default;
+$headings-font-family: $font-family-serif !default;
+$headings-font-style: normal !default;
+$headings-font-weight: 600 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: $tertiary !default;
 
 // buttons
 $btn-border-radius: 1.5rem !default;
@@ -96,7 +96,10 @@ $btn-border-radius-lg: 1.5rem !default;
     color: white;
   }
 }
-.btn-light, .btn-link { color: $body-color; }
+.btn-light,
+.btn-link {
+  color: $body-color;
+}
 
 // link-button
 $link-color: $tertiary !default;
@@ -108,7 +111,7 @@ $card-border-width: 0;
 $card-border-radius: 0;
 $card-border-color: transparent;
 
-// Breadcrumbs 
+// Breadcrumbs
 $breadcrumb-divider: '›' !default;
 $breadcrumb-active-color: $gray !default;
 $breadcrumb-divider-color: $gray !default;
@@ -126,24 +129,28 @@ $list-group-action-active-bg: null;
 
 $modal-sm: 400px !important;
 
-
 $spacer: 1rem;
 $spacers: (
   0: 0,
-  1: $spacer * 0.5, // 8px
-  2: $spacer * 1, // 16px
-  3: $spacer * 2,   // 32px
-  4: $spacer * 3, // 48px
-  5: $spacer * 4, // 64px
-  6: $spacer * 8  // 128px
+  1: $spacer * 0.5,
+  // 8px
+  2: $spacer * 1,
+  // 16px
+  3: $spacer * 2,
+  // 32px
+  4: $spacer * 3,
+  // 48px
+  5: $spacer * 4,
+  // 64px
+  6: $spacer * 8 // 128px
 );
 
-$navbar-nav-link-padding-x:         2rem;
+$navbar-nav-link-padding-x: 2rem;
 
-$navbar-light-color:                rgba($tertiary, .8);
-$navbar-light-hover-color:          $tertiary;
-$navbar-light-active-color:         $brand;
-$navbar-light-disabled-color:       rgba($tertiary, .5) !default;
-$navbar-light-toggler-border-color: rgba($tertiary, .1) !default;
+$navbar-light-color: rgba($tertiary, 0.8);
+$navbar-light-hover-color: $tertiary;
+$navbar-light-active-color: $brand;
+$navbar-light-disabled-color: rgba($tertiary, 0.5) !default;
+$navbar-light-toggler-border-color: rgba($tertiary, 0.1) !default;
 
 @import 'bootstrap/scss/bootstrap';

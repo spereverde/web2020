@@ -14,4 +14,4 @@ import template from './Button.hbs';
  **/
 export default function Button(params) {
   return template(params);
-};
+}

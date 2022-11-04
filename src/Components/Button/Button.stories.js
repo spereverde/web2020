@@ -1,12 +1,8 @@
-import Button from './Button';
+// import Button from './Button';
 
 const htmlTag = {
-  options: [
-    'button',
-    'a',
-    'input'
-  ]
-}
+  options: ['button', 'a', 'input']
+};
 
 const buttonVariants = {
   options: [
@@ -25,11 +21,7 @@ const buttonVariants = {
 };
 
 const buttonSizes = {
-  options: [
-    '',
-    'sm',
-    'lg'
-  ]
+  options: ['', 'sm', 'lg']
 };
 
 /** @see https://getbootstrap.com/docs/5.0/components/buttons */
@@ -42,8 +34,11 @@ function Button({ variant, size, disabled, active, tag, outline, classes }) {
     size ? `btn-${size}` : '',
     !disabled && active ? 'active' : '',
     disabled && tag === 'a' ? 'disabled' : ''
-  ].concat(classes).filter(str => !!str).join(' ');
-  
+  ]
+    .concat(classes)
+    .filter((str) => !!str)
+    .join(' ');
+
   const elem = document.createElement(tag);
 
   elem.className = className;
@@ -57,7 +52,7 @@ function Button({ variant, size, disabled, active, tag, outline, classes }) {
     case 'a':
       elem.href = '#';
       elem.innerHTML = html;
-      elem.setAttribute('role','button');
+      elem.setAttribute('role', 'button');
       break;
     case 'button':
       elem.type = 'button';
@@ -77,8 +72,7 @@ function Button({ variant, size, disabled, active, tag, outline, classes }) {
 
   const result = elem.outerHTML;
   return result;
-};
-
+}
 
 export const Variants = Button.bind({});
 
@@ -93,14 +87,12 @@ Variants.args = {
 };
 
 export const BlockButtons = (args) => {
-  return [
-    Button(args).outerHTML,
-  ].join('\n')
+  return [Button(args).outerHTML].join('\n');
 };
 
 BlockButtons.args = {
   ...Variants.args,
-  classes: ['w-100','d-block']
+  classes: ['w-100', 'd-block']
 };
 
 export default {
@@ -111,35 +103,35 @@ export default {
       options: htmlTag.options,
       control: { type: 'radio' },
       description: 'HTML tag',
-      table: { defaultValue: { summary: htmlTag.options[0] }}
+      table: { defaultValue: { summary: htmlTag.options[0] } }
     },
     size: {
       options: buttonSizes.options,
       control: { type: 'select' },
-      table: { defaultValue: { summary: buttonSizes.options[0] }}
+      table: { defaultValue: { summary: buttonSizes.options[0] } }
     },
     variant: {
       options: buttonVariants.options,
       control: 'select',
       description: 'Color variant',
-      table: { defaultValue: { summary: buttonVariants.options[0] }}
+      table: { defaultValue: { summary: buttonVariants.options[0] } }
     },
     outline: {
       control: 'boolean',
-      table: { defaultValue: { summary: false }}
+      table: { defaultValue: { summary: false } }
     },
     disabled: {
       control: 'boolean',
-      table: { defaultValue: { summary: false }}
+      table: { defaultValue: { summary: false } }
     },
     active: {
       control: 'boolean',
-      table: { defaultValue: { summary: false }}
+      table: { defaultValue: { summary: false } }
     },
     classes: {
       control: 'json',
       description: 'An array of utility classes to apply',
-      table: { defaultValue: { summary: [] }}
+      table: { defaultValue: { summary: [] } }
     }
   }
 };
